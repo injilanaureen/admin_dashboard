@@ -1,0 +1,404 @@
+[
+    {
+        "title": "DashBoard",
+        "image": "/images/monitor.svg",
+        "bg_color": "bg-sky-500",
+        "route": "/",
+        "children": [
+            {
+                "title": "My Mailbox",
+                "route": "/mailbox",
+                "image": "/images/messageblack.svg",
+                "children": [
+                    {
+                        "title": "Compose",
+                        "route": "compose",
+                        "image": "/images/compose.svg"
+                    },
+                    {
+                        "title": "Inbox",
+                        "route": "inbox",
+                        "image": "/images/inbox.svg"
+                    },
+                    {
+                        "title": "Outbox",
+                        "route": "outbox",
+                        "image": "/images/outbox.svg"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "CMS Management",
+        "image": "/images/earth-with-americas.png",
+        "bg_color": "customOrange",
+        "route": "/cms",
+        "children": [
+            {
+                "title": "Manage Banner",
+                "route": "/cms/banner",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage Web Pages",
+                "route": "/cms/pages",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage Web Menus",
+                "route": "/cms/menus",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage Social Links",
+                "route": "/cms/social-links",
+                "image": "/images/right_arrow.svg"
+            }
+        ]
+    },
+    {
+        "title": "Members",
+        "image": "/images/users.svg",
+        "bg_color": "customRed",
+        "route": "/members",
+        "children": [
+            {
+                "title": "Manage Packages",
+                "route": "/members/packages",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage Members",
+                "route": "/members/manage",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage Members KYC",
+                "route": "/members/kyc",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage Members Rights",
+                "route": "/members/rights",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Send Bulk SMS",
+                "route": "/members/sms",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Send Bulk Email",
+                "route": "/members/email",
+                "image": "/images/right_arrow.svg"
+            }
+        ]
+    },
+    {
+        "title": "Payout Service",
+        "bg_color": "customGreen",
+        "route": "/payout",
+        "children": [
+            {
+                "title": "Payout Transactions",
+                "route": "/payout/transactions",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Payout Pending Transactions",
+                "route": "/payout/pending",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Payout Dispute Transactions",
+                "route": "/payout/disputes",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Payout Refund",
+                "route": "/payout/refunds",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Payout Profit Report",
+                "route": "/payout/report",
+                "image": "/images/right_arrow.svg"
+            }
+        ]
+    },
+    {
+        "title": "Users",
+        "image": "/images/users.svg",
+        "bg_color": "customViolet",
+        "route": "/users",
+        "children": [
+            {
+                "title": "Manage User Types",
+                "route": "/users/types",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage Users",
+                "route": "/users/manage",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage User Rights",
+                "route": "/users/rights",
+                "image": "/images/right_arrow.svg"
+            }
+        ]
+    },
+    {
+        "title": "UPI Services",
+        "image": "",
+        "bg_color": "customPink",
+        "route": "/upi",
+        "children": [
+            {
+                "title": "UPI Transactions",
+                "route": "/upi/transactions",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "UPI Pending Transactions",
+                "route": "/upi/pending",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "UPI Dispute Transactions",
+                "route": "/upi/disputes",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "UPI Profit Report",
+                "route": "/upi/report",
+                "image": "/images/right_arrow.svg"
+            }
+        ]
+    },
+    {
+        "title": "Wallet System",
+        "image": "/images/wallet.svg",
+        "bg_color": "customEmerald",
+        "route": "/wallet",
+        "children": [
+            {
+                "title": "Manage Fund Request",
+                "route": "/wallet/request",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage Fund Credit",
+                "route": "/wallet/credit",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage Fund Debit",
+                "route": "/wallet/debit",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage Minimum Balance",
+                "route": "/wallet/balance",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "All Wallet Transactions",
+                "route": "/wallet/transactions",
+                "image": "/images/right_arrow.svg"
+            }
+        ]
+    },
+    {
+        "title": "Recharge System",
+        "image": "/images/rechargeable.png",
+        "bg_color": "customFuchsia",
+        "route": "/recharge",
+        "children": [
+            {
+                "title": "Manage Service Types",
+                "route": "/recharge/types",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage Operators",
+                "route": "/recharge/operators",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage Operators Codes",
+                "route": "/recharge/codes",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage Circles",
+                "route": "/recharge/circles",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage Circles Codes",
+                "route": "/recharge/circles-codes",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage Commission",
+                "route": "/recharge/commission",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Refund Recharge",
+                "route": "/recharge/refund",
+                "image": "/images/right_arrow.svg"
+            }
+        ]
+    },
+    {
+        "title": "API Management",
+        "image": "/images/api.svg",
+        "bg_color": "bg-customRose",
+        "route": "/api",
+        "children": [
+            {
+                "title": "SMS API",
+                "route": "/api/sms",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Recharge API",
+                "route": "/api/recharge",
+                "image": "/images/right_arrow.svg"
+            }
+        ]
+    },
+    {
+        "title": "Reports",
+        "image": "/images/report.svg",
+        "bg_color": "bg-customCyan",
+        "route": "/reports",
+        "children": [
+            {
+                "title": "E-Wallet Balance",
+                "route": "/reports/wallet-balance",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Recharge Transactions",
+                "route": "/reports/recharge-transactions",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Pending Recharges",
+                "route": "/reports/pending-recharges",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "My Profit",
+                "route": "/reports/profit",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Dispute Settlement",
+                "route": "/reports/disputes",
+                "image": "/images/right_arrow.svg"
+            }
+        ]
+    },
+    {
+        "title": "General Settings",
+        "image": "/images/settings.svg",
+        "bg_color": "bg-red-600",
+        "route": "/settings",
+        "children": [
+            {
+                "title": "Manage Countries",
+                "route": "/settings/countries",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage States",
+                "route": "/settings/states",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage Cities",
+                "route": "/settings/cities",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage Banks",
+                "route": "/settings/banks",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage Bank Accounts",
+                "route": "/settings/bank-accounts",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage Company",
+                "route": "/settings/company",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage News",
+                "route": "/settings/news",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage Notice Board",
+                "route": "/settings/notice-board",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage Banner",
+                "route": "/settings/banner",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage Live Chat",
+                "route": "/settings/chat",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Website Control",
+                "route": "/settings/website-control",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Email Setting",
+                "route": "/settings/email",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "My Login Details",
+                "route": "/settings/login-details",
+                "image": "/images/right_arrow.svg"
+            }
+        ]
+    },
+    {
+        "title": "Help & Support",
+        "image": "/images/help.svg",
+        "bg_color": "bg-orange-300",
+        "route": "/support",
+        "children": [
+            {
+                "title": "Manage Ticket Departments",
+                "route": "/support/departments",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "Manage Ticket Priorities",
+                "route": "/support/priorities",
+                "image": "/images/right_arrow.svg"
+            },
+            {
+                "title": "List All Tickets",
+                "route": "/support/tickets",
+                "image": "/images/right_arrow.svg"
+            }
+        ]
+    }
+]
