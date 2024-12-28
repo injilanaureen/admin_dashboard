@@ -1,0 +1,16 @@
+{
+    "inbox": [
+      { "id": 1, "subject": "Welcome to Inbox", "sender": "admin@mailbox.com", "date": "12/28/2024", "status": "received" },
+      { "id": 2, "subject": "Meeting Reminder", "sender": "team@company.com", "date": "12/27/2024", "status": "received" }
+    ],
+    "outbox": [
+      { "id": 3, "subject": "Pending Project Update", "sender": "manager@company.com", "date": "12/26/2024", "status": "pending" }
+    ],
+    "drafts": [
+      { "id": 4, "subject": "Draft Email 1", "sender": "me@mailbox.com", "date": "12/25/2024", "status": "draft" }
+    ],
+    "trash": [
+      { "id": 5, "subject": "Old Invoice", "sender": "billing@company.com", "date": "12/20/2024", "status": "deleted" }
+    ]
+  }
+  

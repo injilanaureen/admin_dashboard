@@ -18,7 +18,7 @@ export default function Main_card({ isOpen, setIsSelected }) {
           image={card.image}
           link={card.link}
           bg_color={card.bg_color}
-          onSelection={() => setIsSelected(card)} // Pass selected card data
+          onClick={() => setIsSelected(card)} // Pass selected card data
         />
       ))}
     </div>

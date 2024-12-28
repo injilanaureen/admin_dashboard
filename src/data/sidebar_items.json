@@ -7,22 +7,22 @@
         "children": [
             {
                 "title": "My Mailbox",
-                "route": "/mailbox",
+                "route": "/mailbox/compose",
                 "image": "/images/messageblack.svg",
                 "children": [
                     {
                         "title": "Compose",
-                        "route": "compose",
+                        "route": "/mailbox/compose",
                         "image": "/images/compose.svg"
                     },
                     {
                         "title": "Inbox",
-                        "route": "inbox",
+                        "route": "/mailbox/inbox",
                         "image": "/images/inbox.svg"
                     },
                     {
                         "title": "Outbox",
-                        "route": "outbox",
+                        "route": "/mailbox/outbox",
                         "image": "/images/outbox.svg"
                     }
                 ]

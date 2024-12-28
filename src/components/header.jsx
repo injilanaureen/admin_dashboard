@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom'; // Make sure you import Link correctly from react-router-dom
 
 export default function Header({isOpen,setIsOpen}) {
 
@@ -7,7 +7,7 @@ export default function Header({isOpen,setIsOpen}) {
     <div className=' bg-red-500 flex items-center justify-between pl-4 md:pl-6 lg:pl-8 pr-2 md:pr-4 lg:pr-6'>
         
          <div className='flex gap-3 md:gap-4 lg:gap-5 p-2 md:p-3 lg:p-4 items-center justify-center'>
-        {isOpen ? <h3 className='text-lg md:text-xl lg:text-2xl font-semibold tracking-tigh text-white'>Administrator</h3> : <img src="/images/home.svg" className='size-5 md:size-6 lg:size-7'/>}
+         <Link to="/"> {isOpen ? <h3 className='text-lg md:text-xl lg:text-2xl font-semibold tracking-tigh text-white'>Administrator</h3> : <img src="/images/home.svg" className='size-5 md:size-6 lg:size-7'/>}</Link>
             <img className=' size-4 md:size-4 lg:size-6 ' src="/images/waffle-menu.png" alt="dropdown" onClick={()=>{setIsOpen(!isOpen)}}/>
           </div> 
       

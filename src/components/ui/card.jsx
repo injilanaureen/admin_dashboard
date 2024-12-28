@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-export default function Card({ title, image, link, bg_color, onSelection }) {
+export default function Card({ title, image, link, bg_color, onClick }) {
   return (
     <div
       className={classNames(
@@ -22,7 +22,7 @@ export default function Card({ title, image, link, bg_color, onSelection }) {
 
       <div
         className="flex flex-row items-center gap-1 bg-purple-400 px-10 py-2 cursor-pointer"
-        onClick={onSelection}
+        onClick={onClick}
       >
         <a className="text-xs text-white font-medium">Click to Open</a>
         <img

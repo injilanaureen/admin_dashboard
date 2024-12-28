@@ -1,13 +1,15 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 // Import components/pages corresponding to each route
-// Assuming you have a component for each route
 import Dashboard from '../components/ui/dashboard/dashboard';
 import MyMailbox from '../components/ui/dashboard/mymailbox';
 import Compose from '../components/ui/dashboard/compose';
 import Inbox from '../components/ui/dashboard/inbox';
 import Outbox from '../components/ui/dashboard/outbox';
+import Drafts from '../components/ui/dashboard/draft';
+import Trash from '../components/ui/dashboard/trash';
+import Sent from '../components/ui/dashboard/sent';
 import ManageBanner from '../components/ui/dashboard/dashboard';
 import ManageWebPages from '../components/ui/dashboard/dashboard';
 import ManageWebMenus from '../components/ui/dashboard/dashboard';
@@ -18,104 +20,122 @@ import MembersRights from '../components/ui/members/membersRights';
 import BulkSMS from '../components/ui/members/bulkSMS';
 import BulkEmail from '../components/ui/members/bulkEmail';
 import Packages from '../components/ui/members/packages';
-import Drafts from '../components/ui/dashboard/draft';
-import Trash from '../components/ui/dashboard/trash';
-// Add all other components similarly
 
 const AppRoutes = () => {
   return (
-      <Routes>
-        <Route path="/" element={<Dashboard />}/>
+    <Routes>
+      {/* Root Dashboard Route */}
+      <Route path="/" element={<Dashboard />}/>
         
+        {/* Mailbox Section with Nested Routes */}
         <Route path="/mailbox" element={<MyMailbox />}>
-            <Route path="compose" element={<Compose />} />
-            <Route path="inbox" element={<Inbox />} />
-            <Route path="outbox" element={<Outbox />} />
-            <Route path="draft" element={<Drafts />} />
-            <Route path="trash" element={<Trash />} />
+          <Route index element={<Compose />} /> {/* Default route */}
+          <Route path="inbox" element={<Inbox />} />
+          <Route path="outbox" element={<Outbox />} />
+          <Route path="draft" element={<Drafts />} />
+          <Route path="sent" element={<Sent />} />
+          <Route path="trash" element={<Trash />} />
+          <Route path="compose" element={<Compose />} />
         </Route>
-     
 
-        {/* CMS Management */}  
-        <Route path="/cms/banner" element={<ManageBanner />} />
-        <Route path="/cms/pages" element={<ManageWebPages />} />
-        <Route path="/cms/menus" element={<ManageWebMenus />} />
-        <Route path="/cms/social-links" element={<ManageSocialLinks />} />
+        {/* CMS Management Section */}
+        {/* <Route path="cms">
+          <Route path="banner" element={<ManageBanner />} />
+          <Route path="pages" element={<ManageWebPages />} />
+          <Route path="menus" element={<ManageWebMenus />} />
+          <Route path="social-links" element={<ManageSocialLinks />} />
+        </Route> */}
 
-        {/* Members */}
-        <Route path="/members/packages" element={<Packages/>} />
-        <Route path="/members/manage" element={<MembersSummary />} />
-        <Route path="/members/kyc" element={<MembersKYC />} />
-        <Route path="/members/rights" element={<MembersRights />} />
-        <Route path="/members/sms" element={<BulkSMS />} />
-        <Route path="/members/email" element={<BulkEmail />} />
-{/* 
-        Payout Service
-        <Route path="/payout/transactions" element={<PayoutTransactions />} />
-        <Route path="/payout/pending" element={<PayoutPendingTransactions />} />
-        <Route path="/payout/disputes" element={<PayoutDisputeTransactions />} />
-        <Route path="/payout/refunds" element={<PayoutRefund />} />
-        <Route path="/payout/report" element={<PayoutProfitReport />} />
+        {/* Members Section */}
+        {/* <Route path="members">
+          <Route path="packages" element={<Packages />} />
+          <Route path="manage" element={<MembersSummary />} />
+          <Route path="kyc" element={<MembersKYC />} />
+          <Route path="rights" element={<MembersRights />} />
+          <Route path="sms" element={<BulkSMS />} />
+          <Route path="email" element={<BulkEmail />} />
+        </Route>
+         */}
+        {/* Add more sections here if needed */}
+        
+      {/* </Route> */}
 
-        {/* Users */}
-        {/* <Route path="/users/types" element={<ManageUserTypes />} />
-        <Route path="/users/manage" element={<ManageUsers />} />
-        <Route path="/users/rights" element={<ManageUserRights />} /> */}
+      {/* Payout System */}
+      {/* <Route path="/payout">
+        <Route path="transactions" element={<PayoutTransactions />} />
+        <Route path="pending" element={<PayoutPendingTransactions />} />
+        <Route path="disputes" element={<PayoutDisputeTransactions />} />
+        <Route path="refunds" element={<PayoutRefund />} />
+        <Route path="report" element={<PayoutProfitReport />} />
+      </Route> */}
 
-        {/* UPI Services */}
-        {/* <Route path="/upi/transactions" element={<UPITransactions />} />
-        <Route path="/upi/pending" element={<UPIPendingTransactions />} />
-        <Route path="/upi/disputes" element={<UPIDisputeTransactions />} />
-        <Route path="/upi/report" element={<UPIProfitReport />} /> */}
+      {/* UPI System */}
+      {/* <Route path="/upi">
+        <Route path="transactions" element={<UPITransactions />} />
+        <Route path="pending" element={<UPIPendingTransactions />} />
+        <Route path="disputes" element={<UPIDisputeTransactions />} />
+        <Route path="report" element={<UPIProfitReport />} />
+      </Route> */}
 
-        {/* Wallet System */}
-        {/* <Route path="/wallet/request" element={<ManageFundRequest />} />
-        <Route path="/wallet/credit" element={<ManageFundCredit />} />
-        <Route path="/wallet/debit" element={<ManageFundDebit />} />
-        <Route path="/wallet/balance" element={<ManageMinimumBalance />} />
-        <Route path="/wallet/transactions" element={<AllWalletTransactions />} /> */}
+      {/* Wallet System */}
+      {/* <Route path="/wallet">
+        <Route path="request" element={<ManageFundRequest />} />
+        <Route path="credit" element={<ManageFundCredit />} />
+        <Route path="debit" element={<ManageFundDebit />} />
+        <Route path="balance" element={<ManageMinimumBalance />} />
+        <Route path="transactions" element={<AllWalletTransactions />} />
+      </Route> */}
 
-        {/* Recharge System */}
-        {/* <Route path="/recharge/types" element={<ManageServiceTypes />} />
-        <Route path="/recharge/operators" element={<ManageOperators />} />
-        <Route path="/recharge/codes" element={<ManageOperatorsCodes />} />
-        <Route path="/recharge/circles" element={<ManageCircles />} />
-        <Route path="/recharge/circles-codes" element={<ManageCirclesCodes />} />
-        <Route path="/recharge/commission" element={<ManageCommission />} />
-        <Route path="/recharge/refund" element={<RefundRecharge />} /> */}
+      {/* Recharge System */}
+      {/* <Route path="/recharge">
+        <Route path="types" element={<ManageServiceTypes />} />
+        <Route path="operators" element={<ManageOperators />} />
+        <Route path="codes" element={<ManageOperatorsCodes />} />
+        <Route path="circles" element={<ManageCircles />} />
+        <Route path="circles-codes" element={<ManageCirclesCodes />} />
+        <Route path="commission" element={<ManageCommission />} />
+        <Route path="refund" element={<RefundRecharge />} />
+      </Route> */}
 
-        {/* API Management */}
-        {/* <Route path="/api/sms" element={<SMSAPI />} />
-        <Route path="/api/recharge" element={<RechargeAPI />} /> */}
+      {/* API Management */}
+      {/* <Route path="/api">
+        <Route path="sms" element={<SMSAPI />} />
+        <Route path="recharge" element={<RechargeAPI />} />
+      </Route> */}
 
-        {/* Reports */}
-        {/* <Route path="/reports/wallet-balance" element={<EWalletBalance />} />
-        <Route path="/reports/recharge-transactions" element={<RechargeTransactions />} />
-        <Route path="/reports/pending-recharges" element={<PendingRecharges />} />
-        <Route path="/reports/profit" element={<MyProfit />} />
-        <Route path="/reports/disputes" element={<DisputeSettlement />} /> */}
+      {/* Reports */}
+      {/* <Route path="/reports">
+        <Route path="wallet-balance" element={<EWalletBalance />} />
+        <Route path="recharge-transactions" element={<RechargeTransactions />} />
+        <Route path="pending-recharges" element={<PendingRecharges />} />
+        <Route path="profit" element={<MyProfit />} />
+        <Route path="disputes" element={<DisputeSettlement />} />
+      </Route> */}
 
-        {/* General Settings */}
-        {/* <Route path="/settings/countries" element={<ManageCountries />} />
-        <Route path="/settings/states" element={<ManageStates />} />
-        <Route path="/settings/cities" element={<ManageCities />} />
-        <Route path="/settings/banks" element={<ManageBanks />} />
-        <Route path="/settings/bank-accounts" element={<ManageBankAccounts />} />
-        <Route path="/settings/company" element={<ManageCompany />} />
-        <Route path="/settings/news" element={<ManageNews />} />
-        <Route path="/settings/notice-board" element={<ManageNoticeBoard />} />
-        <Route path="/settings/banner" element={<ManageBanner />} />
-        <Route path="/settings/chat" element={<ManageLiveChat />} />
-        <Route path="/settings/website-control" element={<WebsiteControl />} />
-        <Route path="/settings/email" element={<EmailSetting />} />
-        <Route path="/settings/login-details" element={<MyLoginDetails />} /> */}
+      {/* General Settings */}
+      {/* <Route path="/settings">
+        <Route path="countries" element={<ManageCountries />} />
+        <Route path="states" element={<ManageStates />} />
+        <Route path="cities" element={<ManageCities />} />
+        <Route path="banks" element={<ManageBanks />} />
+        <Route path="bank-accounts" element={<ManageBankAccounts />} />
+        <Route path="company" element={<ManageCompany />} />
+        <Route path="news" element={<ManageNews />} />
+        <Route path="notice-board" element={<ManageNoticeBoard />} />
+        <Route path="banner" element={<ManageBanner />} />
+        <Route path="chat" element={<ManageLiveChat />} />
+        <Route path="website-control" element={<WebsiteControl />} />
+        <Route path="email" element={<EmailSetting />} />
+        <Route path="login-details" element={<MyLoginDetails />} />
+      </Route> */}
 
-        {/* Help & Support */}
-        {/* <Route path="/support/departments" element={<ManageTicketDepartments />} />
-        <Route path="/support/priorities" element={<ManageTicketPriorities />} />
-        <Route path="/support/tickets" element={<ListAllTickets />} />  */}
-
-      </Routes>
+      {/* Help & Support */}
+      {/* <Route path="/support">
+        <Route path="departments" element={<ManageTicketDepartments />} />
+        <Route path="priorities" element={<ManageTicketPriorities />} />
+        <Route path="tickets" element={<ListAllTickets />} />
+      </Route> */}
+    </Routes>
   );
 };
 
