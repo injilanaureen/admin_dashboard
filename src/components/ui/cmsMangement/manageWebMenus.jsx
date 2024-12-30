@@ -35,29 +35,32 @@ export default function ManageWebMenus() {
   }, []);
 
   return (
-    <div className="p-6 bg-gray-50">
+    <div className="p-6 flex flex-col gap-1 bg-gray-50">
       {/* Header Section */}
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-bold text-cyan-600">Menu Management</h2>
-        <div className="flex gap-4 bg-slate-100">
-          <button
-            onClick={() => setShowTable(true)}
-            className={`px-4 py-2 rounded-lg border-r-2 border-cyan-600 font-medium ${
-              showTable ? "bg-primary-color" : "bg-tertiary-color"
-            } hover:opacity-90`}
-          >
-            + List Menu
-          </button>
-          <button
-            onClick={() => setShowTable(false)}
-            className={`px-4 py-2 rounded-lg border-r-2 border-cyan-600 text-black font-medium ${
-              !showTable ? "bg-primary-color" : "bg-tertiary-color"
-            } hover:opacity-90`}
-          >
-            + Add menu
-          </button>
-        </div>
-      </div>
+      <h2 className="text-3xl font-bold text-cyan-600 mb-6">Menu Management</h2>
+<div className="flex justify-between bg-slate-100 mb-4 w-1/6">
+  <button
+    onClick={() => setShowTable(true)}
+    className={`px-4 py-2 rounded-lg border-l-2 border-cyan-600 font-medium ${
+      showTable
+        ? "bg-primary-color shadow-lg ring-2 ring-cyan-500"
+        : "bg-tertiary-color text-black hover:bg-primary-color hover:ring-cyan-700"
+    } hover:opacity-90 transition duration-300`}
+  >
+    + List Menu
+  </button>
+  <button
+    onClick={() => setShowTable(false)}
+    className={`px-4 py-2 rounded-lg border-r-2 border-cyan-600 font-medium ${
+      !showTable
+        ? "bg-primary-color shadow-lg ring-2 ring-cyan-500"
+        : "bg-tertiary-color text-black hover:bg-primary-color hover:ring-cyan-700"
+    } hover:opacity-90 transition duration-300`}
+  >
+    + Add Menu
+  </button>
+</div>
+
 
       {/* Conditional Rendering */}
       {showTable ? (

@@ -33,7 +33,7 @@ export default function ManageBanner() {
   return (
     <div className="p-6 flex flex-col gap-1 bg-gray-50">
       {/* Header Section */}
-        <h2 className="text-2xl font-bold text-cyan-600 mb-1">Banner Management</h2>
+        <h2 className="text-3xl font-bold text-cyan-600 mb-6">Banner Management</h2>
         <div className="flex justify-between bg-slate-100 mb-4 w-1/6">
       <button
         onClick={() => setShowTable(true)}
