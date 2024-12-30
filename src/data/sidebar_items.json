@@ -29,6 +29,7 @@
             }
         ]
     },
+    
     {
         "title": "CMS Management",
         "image": "/images/earth-with-americas.png",
@@ -57,6 +58,7 @@
             }
         ]
     },
+
     {
         "title": "Members",
         "image": "/images/users.svg",

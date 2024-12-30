@@ -10,10 +10,11 @@ import Outbox from '../components/ui/dashboard/outbox';
 import Drafts from '../components/ui/dashboard/draft';
 import Trash from '../components/ui/dashboard/trash';
 import Sent from '../components/ui/dashboard/sent';
-import ManageBanner from '../components/ui/dashboard/dashboard';
-import ManageWebPages from '../components/ui/dashboard/dashboard';
-import ManageWebMenus from '../components/ui/dashboard/dashboard';
-import ManageSocialLinks from '../components/ui/dashboard/dashboard';
+import MyCMS from '../components/ui/cmsMangement/cms';
+import ManageBanner from '../components/ui/cmsMangement/manageBanner';
+import ManageWebPages from '../components/ui/cmsMangement/manageWebPages';
+import ManageWebMenus from '../components/ui/cmsMangement/manageWebMenus';
+import ManageSocialLinks from '../components/ui/cmsMangement/manageSocialLinks';
 import MembersSummary from '../components/ui/dashboard/membersSummary';
 import MembersKYC from '../components/ui/members/membersKYC';
 import MembersRights from '../components/ui/members/membersRights';
@@ -39,12 +40,12 @@ const AppRoutes = () => {
         </Route>
 
         {/* CMS Management Section */}
-        {/* <Route path="cms">
+        <Route path="/cms" element={<MyCMS />}>
           <Route path="banner" element={<ManageBanner />} />
           <Route path="pages" element={<ManageWebPages />} />
           <Route path="menus" element={<ManageWebMenus />} />
           <Route path="social-links" element={<ManageSocialLinks />} />
-        </Route> */}
+        </Route>
 
         {/* Members Section */}
         {/* <Route path="members">
