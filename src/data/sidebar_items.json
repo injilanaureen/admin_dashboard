@@ -65,38 +65,39 @@
         "bg_color": "customRed",
         "route": "/members",
         "children": [
-            {
-                "title": "Manage Packages",
-                "route": "/members/packages",
-                "image": "/images/right_arrow.svg"
-            },
-            {
-                "title": "Manage Members",
-                "route": "/members/manage",
-                "image": "/images/right_arrow.svg"
-            },
-            {
-                "title": "Manage Members KYC",
-                "route": "/members/kyc",
-                "image": "/images/right_arrow.svg"
-            },
-            {
-                "title": "Manage Members Rights",
-                "route": "/members/rights",
-                "image": "/images/right_arrow.svg"
-            },
-            {
-                "title": "Send Bulk SMS",
-                "route": "/members/sms",
-                "image": "/images/right_arrow.svg"
-            },
-            {
-                "title": "Send Bulk Email",
-                "route": "/members/email",
-                "image": "/images/right_arrow.svg"
-            }
+          {
+            "title": "Manage Packages",
+            "route": "/members/packages",
+            "image": "/images/right_arrow.svg"
+          },
+          {
+            "title": "Manage Members",
+            "route": "/members/manage",
+            "image": "/images/right_arrow.svg"
+          },
+          {
+            "title": "Manage Members KYC",
+            "route": "/members/kyc",
+            "image": "/images/right_arrow.svg"
+          },
+          {
+            "title": "Manage Members Rights",
+            "route": "/members/rights",
+            "image": "/images/right_arrow.svg"
+          },
+          {
+            "title": "Send Bulk SMS",
+            "route": "/members/sms",
+            "image": "/images/right_arrow.svg"
+          },
+          {
+            "title": "Send Bulk Email",
+            "route": "/mailbox/compose",
+            "image": "/images/right_arrow.svg"
+          }
         ]
-    },
+      },
+      
     {
         "title": "Payout Service",
         "bg_color": "customGreen",

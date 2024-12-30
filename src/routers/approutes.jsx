@@ -15,7 +15,7 @@ import ManageBanner from '../components/ui/cmsMangement/manageBanner';
 import ManageWebPages from '../components/ui/cmsMangement/manageWebPages';
 import ManageWebMenus from '../components/ui/cmsMangement/manageWebMenus';
 import ManageSocialLinks from '../components/ui/cmsMangement/manageSocialLinks';
-import MembersSummary from '../components/ui/dashboard/membersSummary';
+import MembersSummary from '../components/ui/members/Members';
 import MembersKYC from '../components/ui/members/membersKYC';
 import MembersRights from '../components/ui/members/membersRights';
 import BulkSMS from '../components/ui/members/bulkSMS';
@@ -48,15 +48,15 @@ const AppRoutes = () => {
         </Route>
 
         {/* Members Section */}
-        {/* <Route path="members">
-          <Route path="packages" element={<Packages />} />
-          <Route path="manage" element={<MembersSummary />} />
-          <Route path="kyc" element={<MembersKYC />} />
-          <Route path="rights" element={<MembersRights />} />
-          <Route path="sms" element={<BulkSMS />} />
-          <Route path="email" element={<BulkEmail />} />
-        </Route>
-         */}
+        <Route path="/members">
+  <Route path="packages" element={<Packages />} />
+  <Route path="manage" element={<MembersSummary />} />
+  <Route path="kyc" element={<MembersKYC />} />
+  <Route path="rights" element={<MembersRights />} />
+  <Route path="sms" element={<BulkSMS />} />
+  <Route path="compose" element={<MyMailbox/>} /> {/* Route for Bulk Email */}
+</Route>
+        
         {/* Add more sections here if needed */}
         
       {/* </Route> */}
