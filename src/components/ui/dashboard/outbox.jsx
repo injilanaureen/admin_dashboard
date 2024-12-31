@@ -44,17 +44,19 @@ const Outbox = () => {
   return (
     <div className="p-6 bg-gray-50">
       <h2 className="text-2xl font-bold text-cyan-600 mb-4">Outbox</h2>
-      <EmailTable
-        title="Outbox Emails"
-        data={filteredOutbox}
-        emptyMessage="No emails in Outbox."
-        onSearch={handleSearch}
-        onDelete={handleDelete}
-        onResend={handleResend}
-        onRefresh={handleRefresh}
-        selectedEmails={selectedEmails}
-        onSelectAll={handleSelectAll}
-      />
+      <div className="overflow-x-auto w-full">
+        <EmailTable
+          title="Outbox Emails"
+          data={filteredOutbox}
+          emptyMessage="No emails in Outbox."
+          onSearch={handleSearch}
+          onDelete={handleDelete}
+          onResend={handleResend}
+          onRefresh={handleRefresh}
+          selectedEmails={selectedEmails}
+          onSelectAll={handleSelectAll}
+        />
+      </div>
     </div>
   );
 };

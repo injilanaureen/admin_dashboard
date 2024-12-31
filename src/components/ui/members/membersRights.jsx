@@ -118,15 +118,15 @@ export default function MembersRights() {
   return (
     <div className="p-6 bg-secondary-color text-text-color">
       <h1 className="text-lg font-bold">Member Rights Management</h1>
-      <div className="mt-4 items-center flex">
-        <label htmlFor="package" className="text-center  text-lg font-medium">
+      <div className="mt-4 items-center flex flex-col sm:flex-row">
+        <label htmlFor="package" className="text-center text-lg font-medium mb-4 sm:mb-0 sm:text-left">
           Select Member Type:
         </label>
         <select
           id="package"
           value={selectedPackage}
           onChange={handlePackageChange}
-          className="mt-1 w-full p-2 border border-tertiary-color bg-white text-black"
+          className="mt-1 w-full sm:w-1/2 p-2 border border-tertiary-color bg-white text-black"
         >
           <option value="">-- Select Package --</option>
           {packages.map((pkg, index) => (
@@ -138,7 +138,7 @@ export default function MembersRights() {
       </div>
 
       {selectedPackage && (
-        <div className="mt-6 border border-gray-300 rounded-lg p-4">
+        <div className="mt-6 border border-gray-300 rounded-lg p-4 overflow-x-auto">
           <h2 className="text-lg font-semibold mb-4">
             Rights for {selectedPackage}
           </h2>
@@ -158,24 +158,24 @@ export default function MembersRights() {
                   {item.children.map((child, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center gap-10 border border-gray-300 p-2 rounded-md mb-2"
+                      className="flex items-center gap-4 sm:gap-6 flex-wrap border border-gray-300 p-2 rounded-md mb-2"
                     >
                       <div className="flex-1 font-medium">{child.name}</div>
-                      {child.rights.map((right, ridx) => (
-                        <label key={ridx} className="flex items-center space-x-1">
-                          <input
-                            type="checkbox"
-                            disabled={!selectedRights[item.category]}
-                            checked={
-                              selectedRights[item.category]?.[child.name]?.[right] || false
-                            }
-                            onChange={() =>
-                              handleRightCheck(item.category, child.name, right)
-                            }
-                          />
-                          <span>{right}</span>
-                        </label>
-                      ))}
+                      <div className="flex items-center gap-2 flex-wrap">
+                        {child.rights.map((right, ridx) => (
+                          <label key={ridx} className="flex items-center space-x-1">
+                            <input
+                              type="checkbox"
+                              disabled={!selectedRights[item.category]}
+                              checked={selectedRights[item.category]?.[child.name]?.[right] || false}
+                              onChange={() =>
+                                handleRightCheck(item.category, child.name, right)
+                              }
+                            />
+                            <span>{right}</span>
+                          </label>
+                        ))}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -184,7 +184,7 @@ export default function MembersRights() {
           ))}
           <button
             onClick={handleSave}
-            className="mt-4 bg-primary-color text-btn-text-color px-4 py-2 rounded-md"
+            className="mt-4 bg-cyan-700 text-white px-4 py-2 rounded-md"
           >
             Save Rights
           </button>

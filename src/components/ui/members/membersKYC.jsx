@@ -91,20 +91,16 @@ export default function MembersKYC() {
       <h2 className="text-3xl font-bold text-cyan-600 mb-4">Member Management</h2>
 
       {/* Button to toggle between list and add member form */}
-      <div className="flex gap-4 mb-6">
+      <div className="flex flex-wrap gap-4 mb-6">
         <button
           onClick={() => setShowAddMemberForm(false)}
-          className={`px-4 py-2 rounded-lg border-l-2 border-cyan-600 font-medium ${
-            !showAddMemberForm ? "bg-primary-color shadow-lg ring-2 ring-cyan-500" : "bg-tertiary-color text-black hover:bg-primary-color hover:ring-cyan-700"
-          }`}
+          className={`px-4 py-2 rounded-lg border-l-2 border-cyan-600 font-medium ${!showAddMemberForm ? "bg-primary-color shadow-lg ring-2 ring-cyan-500" : "bg-tertiary-color text-black hover:bg-primary-color hover:ring-cyan-700"}`}
         >
-          + List Members KYA
+          + List Members KYC
         </button>
         <button
           onClick={() => setShowAddMemberForm(true)}
-          className={`px-4 py-2 rounded-lg border-r-2 border-cyan-600 font-medium ${
-            showAddMemberForm ? "bg-primary-color shadow-lg ring-2 ring-cyan-500" : "bg-tertiary-color text-black hover:bg-primary-color hover:ring-cyan-700"
-          }`}
+          className={`px-4 py-2 rounded-lg border-r-2 border-cyan-600 font-medium ${showAddMemberForm ? "bg-primary-color shadow-lg ring-2 ring-cyan-500" : "bg-tertiary-color text-black hover:bg-primary-color hover:ring-cyan-700"}`}
         >
           + Add Member KYC
         </button>
@@ -116,56 +112,57 @@ export default function MembersKYC() {
           {/* Add Member KYC Form */}
           <h3 className="text-xl font-semibold text-gray-800 mb-4">Add New Member KYC</h3>
           <form className="space-y-4">
-            <div className="flex gap-6">
-              <label className="text-gray-700 font-medium mb-1 w-48">Full Name:</label>
+            {/* Form Fields */}
+            <div className="flex flex-col md:flex-row gap-6">
+              <label className="text-gray-700 font-medium mb-1 w-full md:w-48">Full Name:</label>
               <input
                 type="text"
                 placeholder="Enter full name"
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-color"
               />
             </div>
-            <div className="flex gap-6">
-              <label className="text-gray-700 font-medium mb-1 w-48">Contact Number:</label>
+            <div className="flex flex-col md:flex-row gap-6">
+              <label className="text-gray-700 font-medium mb-1 w-full md:w-48">Contact Number:</label>
               <input
                 type="text"
                 placeholder="Enter contact number"
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-color"
               />
             </div>
-            <div className="flex gap-6">
-              <label className="text-gray-700 font-medium mb-1 w-48">Email Address:</label>
+            <div className="flex flex-col md:flex-row gap-6">
+              <label className="text-gray-700 font-medium mb-1 w-full md:w-48">Email Address:</label>
               <input
                 type="email"
                 placeholder="Enter email address"
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-color"
               />
             </div>
-            <div className="flex gap-6">
-              <label className="text-gray-700 font-medium mb-1 w-48">Outlet ID:</label>
+            <div className="flex flex-col md:flex-row gap-6">
+              <label className="text-gray-700 font-medium mb-1 w-full md:w-48">Outlet ID:</label>
               <input
                 type="text"
                 placeholder="Enter outlet ID"
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-color"
               />
             </div>
-            <div className="flex gap-6">
-              <label className="text-gray-700 font-medium mb-1 w-48">PAN Number:</label>
+            <div className="flex flex-col md:flex-row gap-6">
+              <label className="text-gray-700 font-medium mb-1 w-full md:w-48">PAN Number:</label>
               <input
                 type="text"
                 placeholder="Enter PAN number"
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-color"
               />
             </div>
-            <div className="flex gap-6">
-              <label className="text-gray-700 font-medium mb-1 w-48">Aadhaar Number:</label>
+            <div className="flex flex-col md:flex-row gap-6">
+              <label className="text-gray-700 font-medium mb-1 w-full md:w-48">Aadhaar Number:</label>
               <input
                 type="text"
                 placeholder="Enter Aadhaar number"
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-color"
               />
             </div>
-            <div className="flex gap-6">
-              <label className="text-gray-700 font-medium mb-1 w-48">KYC Status:</label>
+            <div className="flex flex-col md:flex-row gap-6">
+              <label className="text-gray-700 font-medium mb-1 w-full md:w-48">KYC Status:</label>
               <select className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-color">
                 <option value="">Select KYC Status</option>
                 <option value="Verified">Verified</option>
@@ -180,115 +177,100 @@ export default function MembersKYC() {
             </button>
           </form>
         </div>
-      )  : (
+      ) : (
         <div>
-           {/* Summary Row */}
-      <div className="bg-primary-color flex text-orange-700 p-4 rounded-lg flex justify-between">
-        <div className="w-1/3 bg-orange-300 p-2 text-center">Total Members: {member.length}</div>
-        <div className="w-1/3 bg-red-300 p-2 text-center">Active Members: {activeCount}</div>
-        <div className="w-1/3 bg-blue-300 p-2 text-center">Inactive Members: {inactiveCount}</div>
-      </div>
+          {/* Summary Row */}
+          <div className="bg-primary-color flex text-orange-700 p-4 rounded-lg flex-wrap gap-4 justify-between">
+            <div className="w-full md:w-1/3 bg-orange-300 p-2 text-center">Total Members: {member.length}</div>
+            <div className="w-full md:w-1/3 bg-red-300 p-2 text-center">Active Members: {activeCount}</div>
+            <div className="w-full md:w-1/3 bg-blue-300 p-2 text-center">Inactive Members: {inactiveCount}</div>
+          </div>
 
-      {/* Filters Section */}
-      <div className="flex flex-wrap gap-4 mb-6">
-        <input
-          type="text"
-          placeholder="Filter by Name"
-          value={filters.name}
-          onChange={(e) => setFilters({ ...filters, name: e.target.value })}
-          className="border border-gray-300 rounded-lg px-3 py-2 w-48 focus:ring-2 focus:ring-cyan-500"
-        />
-        <input
-          type="text"
-          placeholder="Filter by Email"
-          value={filters.email}
-          onChange={(e) => setFilters({ ...filters, email: e.target.value })}
-          className="border border-gray-300 rounded-lg px-3 py-2 w-48 focus:ring-2 focus:ring-cyan-500"
-        />
-        <input
-          type="date"
-          value={filters.fromDate}
-          onChange={(e) => setFilters({ ...filters, fromDate: e.target.value })}
-          className="border border-gray-300 rounded-lg px-3 py-2 w-48 focus:ring-2 focus:ring-cyan-500"
-        />
-        <input
-          type="date"
-          value={filters.toDate}
-          onChange={(e) => setFilters({ ...filters, toDate: e.target.value })}
-          className="border border-gray-300 rounded-lg px-3 py-2 w-48 focus:ring-2 focus:ring-cyan-500"
-        />
-        <select
-          value={filters.type}
-          onChange={(e) => setFilters({ ...filters, type: e.target.value })}
-          className="border border-gray-300 rounded-lg px-3 py-2 w-48 focus:ring-2 focus:ring-cyan-500"
-        >
-          <option value="">Filter by Type</option>
-          <option value="COMPANY">Company</option>
-          <option value="API Partner">API Partner</option>
-        </select>
-        <button
-          onClick={handleFilter}
-          className="px-4 py-2 bg-primary-color text-black bg-orange-200 rounded-lg hover:opacity-90"
-        >
-          Apply Filters
-        </button>
-      </div>
-          {/* Member List Table */}
-          <table className="min-w-full border-collapse border border-gray-200 text-sm text-gray-600">
-  <thead className="bg-gray-100">
-    <tr>
-      <th className="border border-gray-200 py-2 px-2">S. No</th>
-      <th className="border border-gray-200 py-2 px-2">Member Info</th>
-      <th className="border border-gray-200 py-2 px-2">Mobile</th>
-      <th className="border border-gray-200 py-2 px-2">Outlet ID</th>
-      <th className="border border-gray-200 py-2 px-2">PAN Number</th>
-      <th className="border border-gray-200 py-2 px-2">Aadhaar Number</th>
-      <th className="border border-gray-200 py-2 px-2">Verified Date</th>
-      <th className="border border-gray-200 py-2 px-2">Verified By</th>
-      <th className="border border-gray-200 py-2 px-2">Joining Date</th>
-      <th className="border border-gray-200 py-2 px-2">KYC Status</th>
-      <th className="border border-gray-200 py-2 px-2">Status</th>
-      <th className="border border-gray-200 py-2 px-2">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    {paginatedMembers.map((member, index) => (
-      <tr key={member.id} className="hover:bg-gray-50">
-        <td className="border border-gray-200 py-2 px-2 text-center">{index + 1}</td>
-        <td className="border border-gray-200 py-2 px-2 text-center">
-          {member.memberName} <br />
-          <span className="text-gray-500">({member.memberId})</span>
-        </td>
-        <td className="border border-gray-200 py-2 px-2 text-center">{member.contactInfo}</td>
-        <td className="border border-gray-200 py-2 px-2 text-center">{member.outletId || "—"}</td>
-        <td className="border border-gray-200 py-2 px-2 text-center">
-          {member.panNumber ? `PAN: ${member.panNumber}` : "—"}
-        </td>
-        <td className="border border-gray-200 py-2 px-2 text-center">
-          {member.aadhaarNumber ? `Aadhaar: ${member.aadhaarNumber}` : "—"}
-        </td>
-        <td className="border border-gray-200 py-2 px-2 text-center">
-          {member.verifiedDate || "—"}
-        </td>
-        <td className="border border-gray-200 py-2 px-2 text-center">
-          {member.verifiedBy || "—"}
-        </td>
-        <td className="border border-gray-200 py-2 px-2 text-center">{member.joiningDate}</td>
-        <td className="border border-gray-200 py-2 px-2 text-center">
-          {member.kycStatus || "Pending"}
-        </td>
-        <td className="border border-gray-200 py-2 px-2 text-center">{member.status}</td>
-        <td className="border border-gray-200 py-2 px-2 text-center">
-          <button className="px-2 py-1 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700">
-            Edit
-          </button>
-        </td>
+          {/* Filters Section */}
+          <div className="flex flex-wrap gap-4 mb-6">
+            {/* Filter Inputs */}
+            <input
+              type="text"
+              placeholder="Filter by Name"
+              value={filters.name}
+              onChange={(e) => setFilters({ ...filters, name: e.target.value })}
+              className="border border-gray-300 rounded-lg px-3 py-2 w-full sm:w-48 focus:ring-2 focus:ring-cyan-500"
+            />
+            <input
+              type="text"
+              placeholder="Filter by Email"
+              value={filters.email}
+              onChange={(e) => setFilters({ ...filters, email: e.target.value })}
+              className="border border-gray-300 rounded-lg px-3 py-2 w-full sm:w-48 focus:ring-2 focus:ring-cyan-500"
+            />
+            <input
+              type="text"
+              placeholder="Filter by Type"
+              value={filters.type}
+              onChange={(e) => setFilters({ ...filters, type: e.target.value })}
+              className="border border-gray-300 rounded-lg px-3 py-2 w-full sm:w-48 focus:ring-2 focus:ring-cyan-500"
+            />
+            <input
+              type="date"
+              value={filters.fromDate}
+              onChange={(e) => setFilters({ ...filters, fromDate: e.target.value })}
+              className="border border-gray-300 rounded-lg px-3 py-2 w-full sm:w-48 focus:ring-2 focus:ring-cyan-500"
+            />
+            <input
+              type="date"
+              value={filters.toDate}
+              onChange={(e) => setFilters({ ...filters, toDate: e.target.value })}
+              className="border border-gray-300 rounded-lg px-3 py-2 w-full sm:w-48 focus:ring-2 focus:ring-cyan-500"
+            />
+            <button
+              onClick={handleFilter}
+              className="bg-cyan-500 text-white px-4 py-2 rounded-lg mt-2 sm:mt-0 w-full sm:w-auto"
+            >
+              Apply Filters
+            </button>
+          </div>
+
+         {/* Table */}
+<div className="overflow-x-auto bg-white shadow-md rounded-lg">
+  <table className="min-w-full table-auto">
+    <thead>
+      <tr className="bg-gray-200 text-gray-700 text-sm">
+        <th className="py-2 px-3 text-left">Member Name</th>
+        <th className="py-2 px-3 text-left">Email</th>
+        <th className="py-2 px-3 text-left">Package</th>
+        <th className="py-2 px-3 text-left">Joining Date</th>
+        <th className="py-2 px-3 text-left">Status</th>
+        <th className="py-2 px-3 text-left">Actions</th>
       </tr>
-    ))}
-  </tbody>
-</table>
+    </thead>
+    <tbody className="text-sm">
+      {paginatedMembers.map((member) => (
+        <tr key={member.id} className="border-t">
+          <td className="py-2 px-3">{member.memberName}</td>
+          <td className="py-2 px-3">{member.email}</td>
+          <td className="py-2 px-3">{member.package}</td>
+          <td className="py-2 px-3">{member.joiningDate}</td>
+          <td className="py-2 px-3">{member.status}</td>
+          <td className="py-2 px-3">{member.quickAction}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
 
 
+          {/* Pagination */}
+          <div className="flex justify-center gap-2 mt-6">
+            {[...Array(Math.ceil(filteredMembers.length / pageSize))].map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => handlePageChange(idx + 1)}
+                className={`px-4 py-2 rounded-lg ${currentPage === idx + 1 ? "bg-cyan-600 text-white" : "bg-gray-300"}`}
+              >
+                {idx + 1}
+              </button>
+            ))}
+          </div>
         </div>
       )}
     </div>

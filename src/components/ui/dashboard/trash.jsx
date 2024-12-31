@@ -38,16 +38,18 @@ const Trash = () => {
   return (
     <div className="p-6 bg-gray-50">
       <h2 className="text-2xl font-bold text-cyan-600 mb-4">Trash</h2>
-      <EmailTable
-        title="Trash Emails"
-        data={filteredTrash}
-        emptyMessage="No emails in Trash."
-        onSearch={handleSearch}
-        onDelete={handleDelete}
-        onRefresh={handleRefresh}
-        selectedEmails={selectedEmails}
-        onSelectAll={handleSelectAll}
-      />
+      <div className="overflow-x-auto w-full">
+        <EmailTable
+          title="Trash Emails"
+          data={filteredTrash}
+          emptyMessage="No emails in Trash."
+          onSearch={handleSearch}
+          onDelete={handleDelete}
+          onRefresh={handleRefresh}
+          selectedEmails={selectedEmails}
+          onSelectAll={handleSelectAll}
+        />
+      </div>
     </div>
   );
 };

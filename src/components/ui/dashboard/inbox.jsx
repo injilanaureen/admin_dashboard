@@ -8,12 +8,10 @@ const Inbox = () => {
   ]);
   const [selectedEmails, setSelectedEmails] = useState([]);
 
-  // Handle refreshing emails
   const handleRefresh = () => {
     alert("Emails refreshed! (Mock functionality)");
   };
 
-  // Handle deleting selected emails
   const handleDelete = () => {
     const remainingEmails = emails.filter((email) => !selectedEmails.includes(email));
     setEmails(remainingEmails);
@@ -21,7 +19,6 @@ const Inbox = () => {
     alert("Selected emails deleted!");
   };
 
-  // Handle selecting/deselecting all emails
   const handleSelectAll = (selected) => {
     setSelectedEmails(selected);
   };
@@ -29,23 +26,25 @@ const Inbox = () => {
   return (
     <div className="p-6 bg-gray-50">
       <h2 className="text-2xl font-bold text-cyan-600 mb-4">Inbox</h2>
-      <EmailTable
-        title="Inbox Emails"
-        data={emails}
-        emptyMessage="No emails in Inbox."
-        onSearch={(searchTerm) => {
-          const filteredEmails = emails.filter(
-            (email) =>
-              email.subject.toLowerCase().includes(searchTerm.toLowerCase()) ||
-              email.sender.toLowerCase().includes(searchTerm.toLowerCase())
-          );
-          setEmails(filteredEmails);
-        }}
-        onDelete={handleDelete}
-        onRefresh={handleRefresh}
-        selectedEmails={selectedEmails}
-        onSelectAll={handleSelectAll}
-      />
+      <div className="overflow-x-auto w-full">
+        <EmailTable
+          title="Inbox Emails"
+          data={emails}
+          emptyMessage="No emails in Inbox."
+          onSearch={(searchTerm) => {
+            const filteredEmails = emails.filter(
+              (email) =>
+                email.subject.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                email.sender.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+            setEmails(filteredEmails);
+          }}
+          onDelete={handleDelete}
+          onRefresh={handleRefresh}
+          selectedEmails={selectedEmails}
+          onSelectAll={handleSelectAll}
+        />
+      </div>
     </div>
   );
 };

@@ -62,8 +62,8 @@ export default function ManageWebPages() {
           <h3 className="text-xl font-semibold text-gray-800 mb-4">Add/Update Social Links</h3>
           <form className="space-y-4" onSubmit={handleSubmit}>
             {fields.map((field) => (
-              <div key={field.name} className="flex gap-6 ">
-                <label className="text-gray-700 w-36">{field.label}</label>
+              <div key={field.name} className="flex flex-col sm:flex-row sm:gap-6">
+                <label className="text-gray-700 mb-2 sm:w-36">{field.label}</label>
                 <input
                   type="text"
                   name={field.name}
@@ -76,7 +76,7 @@ export default function ManageWebPages() {
             ))}
             <button
               type="submit"
-              className="px-4 py-2 bg-primary-color text-white rounded-lg hover:opacity-90"
+              className="px-4 py-2 bg-cyan-800 text-white rounded-lg hover:opacity-90"
             >
               Save Page
             </button>

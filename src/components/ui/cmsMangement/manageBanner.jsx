@@ -31,31 +31,33 @@ export default function ManageBanner() {
   }, []);
 
   return (
-    <div className="p-6 flex flex-col gap-1 bg-gray-50">
+    <div className="p-6 flex flex-col gap-6 bg-gray-50">
       {/* Header Section */}
-    <h2 className="text-3xl font-bold text-cyan-600 mb-6">Banner Management</h2>
-        <div className="flex justify-between bg-slate-100 mb-4 w-1/6">
-      <button
-        onClick={() => setShowTable(true)}
-        className={`px-4 py-2 rounded-lg border-l-2 border-cyan-600 font-medium ${
-          showTable
-            ? "bg-primary-color shadow-lg ring-2 ring-cyan-500"
-            : "bg-tertiary-color text-black hover:bg-primary-color hover:ring-cyan-700"
-        } hover:opacity-90 transition duration-300`}
-      >
-        + List Banner
-      </button>
-      <button
-        onClick={() => setShowTable(false)}
-        className={`px-4 py-2 rounded-lg border-r-2 border-cyan-600 font-medium ${
-          !showTable
-            ? "bg-primary-color shadow-lg ring-2 ring-cyan-500"
-            : "bg-tertiary-color text-black hover:bg-primary-color hover:ring-cyan-700"
-        } hover:opacity-90 transition duration-300`}
-      >
-        + Add Banner
-      </button>
-    </div>
+      <h2 className="text-3xl font-bold text-cyan-600 mb-6">Banner Management</h2>
+
+      {/* Button Toggle */}
+      <div className="flex justify-between sm:w-1/4 w-full bg-slate-100 mb-6 p-4 rounded-lg">
+        <button
+          onClick={() => setShowTable(true)}
+          className={`px-4 py-2 rounded-lg border-l-2 border-cyan-600 font-medium w-full sm:w-auto ${
+            showTable
+              ? "bg-primary-color shadow-lg ring-2 ring-cyan-500"
+              : "bg-tertiary-color text-black hover:bg-primary-color hover:ring-cyan-700"
+          } hover:opacity-90 transition duration-300`}
+        >
+          + List Banner
+        </button>
+        <button
+          onClick={() => setShowTable(false)}
+          className={`px-4 py-2 rounded-lg border-r-2 border-cyan-600 font-medium w-full sm:w-auto ${
+            !showTable
+              ? "bg-primary-color shadow-lg ring-2 ring-cyan-500"
+              : "bg-tertiary-color text-black hover:bg-primary-color hover:ring-cyan-700"
+          } hover:opacity-90 transition duration-300`}
+        >
+          + Add Banner
+        </button>
+      </div>
 
       {/* Conditional Rendering */}
       {showTable ? (
@@ -124,42 +126,42 @@ export default function ManageBanner() {
           {/* Add Banner Section */}
           <h3 className="text-xl font-semibold text-gray-800 mb-4">Add New Banner</h3>
           <form className="space-y-4">
-            <div className="flex gap-6">
-              <label className="text-gray-700 font-medium mb-1 w-24">Banner Name</label>
+            <div className="flex flex-col sm:flex-row gap-6">
+              <label className="text-gray-700 font-medium mb-1 w-full sm:w-1/4">Banner Name</label>
               <input
                 type="text"
                 placeholder="Enter banner name"
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-color"
+                className="w-full sm:w-3/4 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-color"
               />
             </div>
-            <div className="flex gap-6">
-              <label className="block text-gray-700 font-medium mb-1 w-24">Banner Title</label>
+            <div className="flex flex-col sm:flex-row gap-6">
+              <label className="block text-gray-700 font-medium mb-1 w-full sm:w-1/4">Banner Title</label>
               <input
                 type="text"
                 placeholder="Enter banner title"
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-color"
+                className="w-full sm:w-3/4 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-color"
               />
             </div>
-            <div className="flex gap-6">
-              <label className="block text-gray-700 font-medium mb-1 w-24">Position</label>
+            <div className="flex flex-col sm:flex-row gap-6">
+              <label className="block text-gray-700 font-medium mb-1 w-full sm:w-1/4">Position</label>
               <input
                 type="text"
                 placeholder="Enter position"
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-color"
+                className="w-full sm:w-3/4 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-color"
               />
             </div>
-            <div className="flex gap-6">
-              <label className="block text-gray-700 font-medium mb-1 w-24">Date</label>
+            <div className="flex flex-col sm:flex-row gap-6">
+              <label className="block text-gray-700 font-medium mb-1 w-full sm:w-1/4">Date</label>
               <input
                 type="date"
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-color"
+                className="w-full sm:w-3/4 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-color"
               />
             </div>
-            <div className="flex gap-6">
-              <label className="b text-gray-700 font-medium mb-1 w-24">Banner Description</label>
-              <input
-                type="textarea "
-                className="w-full border border-gray-300 rounded-lg px-3 py-20 focus:outline-none focus:ring-2 focus:ring-primary-color"
+            <div className="flex flex-col sm:flex-row gap-6">
+              <label className="text-gray-700 font-medium mb-1 w-full sm:w-1/4">Banner Description</label>
+              <textarea
+                className="w-full sm:w-3/4 border border-gray-300 rounded-lg px-3 py-20 focus:outline-none focus:ring-2 focus:ring-primary-color"
+                placeholder="Enter banner description"
               />
             </div>
             <button

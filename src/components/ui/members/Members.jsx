@@ -95,7 +95,9 @@ export default function MemberManagement() {
         <button
           onClick={() => setShowAddMemberForm(false)}
           className={`px-4 py-2 rounded-lg border-l-2 border-cyan-600 font-medium ${
-            !showAddMemberForm ? "bg-primary-color shadow-lg ring-2 ring-cyan-500" : "bg-tertiary-color text-black hover:bg-primary-color hover:ring-cyan-700"
+            !showAddMemberForm
+              ? "bg-primary-color shadow-lg ring-2 ring-cyan-500"
+              : "bg-tertiary-color text-black hover:bg-primary-color hover:ring-cyan-700"
           }`}
         >
           + List Members
@@ -103,7 +105,9 @@ export default function MemberManagement() {
         <button
           onClick={() => setShowAddMemberForm(true)}
           className={`px-4 py-2 rounded-lg border-r-2 border-cyan-600 font-medium ${
-            showAddMemberForm ? "bg-primary-color shadow-lg ring-2 ring-cyan-500" : "bg-tertiary-color text-black hover:bg-primary-color hover:ring-cyan-700"
+            showAddMemberForm
+              ? "bg-primary-color shadow-lg ring-2 ring-cyan-500"
+              : "bg-tertiary-color text-black hover:bg-primary-color hover:ring-cyan-700"
           }`}
         >
           + Add Member
@@ -115,6 +119,7 @@ export default function MemberManagement() {
         <div>
           {/* Add Member Form */}
           <h3 className="text-xl font-semibold text-gray-800 mb-4">Add New Member</h3>
+          {/* Add your form here */}
           <form className="space-y-4">
             <div className="flex gap-6">
               <label className="text-gray-700 font-medium mb-1 w-24">First Name</label>
@@ -176,93 +181,75 @@ export default function MemberManagement() {
         </div>
       ) : (
         <div>
-           {/* Summary Row */}
-      <div className="bg-primary-color flex text-orange-700 p-4 rounded-lg flex justify-between">
-        <div className="w-1/3 bg-orange-300 p-2 text-center">Total Members: {member.length}</div>
-        <div className="w-1/3 bg-red-300 p-2 text-center">Active Members: {activeCount}</div>
-        <div className="w-1/3 bg-blue-300 p-2 text-center">Inactive Members: {inactiveCount}</div>
-      </div>
+          {/* Summary Row */}
+          <div className="bg-primary-color flex flex-wrap text-white p-1 rounded-lg justify-between gap-4 mb-6">
+  <div className="w-full md:w-1/3 bg-orange-400 p-2 text-center rounded-lg">
+    Total Members: {member.length}
+  </div>
+  <div className="w-full md:w-1/3 bg-green-400 p-2 text-center rounded-lg">
+    Active Members: {activeCount}
+  </div>
+  <div className="w-full md:w-1/3 bg-red-400 p-2 text-center rounded-lg">
+    Inactive Members: {inactiveCount}
+  </div>
+</div>
 
-      {/* Filters Section */}
-      <div className="flex flex-wrap gap-4 mb-6">
-        <input
-          type="text"
-          placeholder="Filter by Name"
-          value={filters.name}
-          onChange={(e) => setFilters({ ...filters, name: e.target.value })}
-          className="border border-gray-300 rounded-lg px-3 py-2 w-48 focus:ring-2 focus:ring-cyan-500"
-        />
-        <input
-          type="text"
-          placeholder="Filter by Email"
-          value={filters.email}
-          onChange={(e) => setFilters({ ...filters, email: e.target.value })}
-          className="border border-gray-300 rounded-lg px-3 py-2 w-48 focus:ring-2 focus:ring-cyan-500"
-        />
-        <input
-          type="date"
-          value={filters.fromDate}
-          onChange={(e) => setFilters({ ...filters, fromDate: e.target.value })}
-          className="border border-gray-300 rounded-lg px-3 py-2 w-48 focus:ring-2 focus:ring-cyan-500"
-        />
-        <input
-          type="date"
-          value={filters.toDate}
-          onChange={(e) => setFilters({ ...filters, toDate: e.target.value })}
-          className="border border-gray-300 rounded-lg px-3 py-2 w-48 focus:ring-2 focus:ring-cyan-500"
-        />
-        <select
-          value={filters.type}
-          onChange={(e) => setFilters({ ...filters, type: e.target.value })}
-          className="border border-gray-300 rounded-lg px-3 py-2 w-48 focus:ring-2 focus:ring-cyan-500"
-        >
-          <option value="">Filter by Type</option>
-          <option value="COMPANY">Company</option>
-          <option value="API Partner">API Partner</option>
-        </select>
-        <button
-          onClick={handleFilter}
-          className="px-4 py-2 bg-primary-color text-black bg-orange-200 rounded-lg hover:opacity-90"
-        >
-          Apply Filters
-        </button>
-      </div>
+          {/* Filters Section */}
+          <div className="flex flex-wrap gap-4 mb-6">
+            {/* Filters */}
+          </div>
+
           {/* Member List Table */}
           <table className="min-w-full border-collapse border border-gray-200 text-sm text-gray-600">
-  <thead className="bg-gray-100">
-    <tr>
-      <th className="border border-gray-200 py-2 px-2">S. No</th>
-      <th className="border border-gray-200 py-2 px-2">Member ID</th>
-      <th className="border border-gray-200 py-2 px-2">Member Name</th>
-      <th className="border border-gray-200 py-2 px-2">Contact Info</th>
-      <th className="border border-gray-200 py-2 px-2">Owner ID</th>
-      <th className="border border-gray-200 py-2 px-2">Package</th>
-      <th className="border border-gray-200 py-2 px-2">Joining Date</th>
-      <th className="border border-gray-200 py-2 px-2">Status</th>
-      <th className="border border-gray-200 py-2 px-2">Quick Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    {paginatedMembers.map((member, index) => (
-      <tr key={member.id} className="hover:bg-gray-50">
-        <td className="border border-gray-200 py-2 px-2 text-center">{index + 1}</td>
-        <td className="border border-gray-200 py-2 px-2 text-center">{member.memberId}</td>
-        <td className="border border-gray-200 py-2 px-2 text-center">{member.memberName}</td>
-        <td className="border border-gray-200 py-2 px-2 text-center">{member.contactInfo}</td>
-        <td className="border border-gray-200 py-2 px-2 text-center">{member.ownerId}</td>
-        <td className="border border-gray-200 py-2 px-2 text-center">{member.package}</td>
-        <td className="border border-gray-200 py-2 px-2 text-center">{member.joiningDate}</td>
-        <td className="border border-gray-200 py-2 px-2 text-center">{member.status}</td>
-        <td className="border border-gray-200 py-2 px-2 text-center">
-          <button className="px-2 py-1 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700">
-            Edit
-          </button>
-        </td>
-      </tr>
-    ))}
-  </tbody>
-</table>
-
+            <thead className="bg-gray-100">
+              <tr>
+                <th className="border border-gray-200 py-2 px-2">S. No</th>
+                <th className="border border-gray-200 py-2 px-2">Member ID</th>
+                <th className="border border-gray-200 py-2 px-2">Member Name</th>
+                <th className="border border-gray-200 py-2 px-2">Contact Info</th>
+                <th className="border border-gray-200 py-2 px-2">Owner ID</th>
+                <th className="border border-gray-200 py-2 px-2">Package</th>
+                <th className="border border-gray-200 py-2 px-2">Joining Date</th>
+                <th className="border border-gray-200 py-2 px-2">Status</th>
+                <th className="border border-gray-200 py-2 px-2">Quick Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {paginatedMembers.map((member, index) => (
+                <tr key={member.id} className="hover:bg-gray-50">
+                  <td className="border border-gray-200 py-2 px-2 text-center">
+                    {index + 1}
+                  </td>
+                  <td className="border border-gray-200 py-2 px-2 text-center">
+                    {member.memberId}
+                  </td>
+                  <td className="border border-gray-200 py-2 px-2 text-center">
+                    {member.memberName}
+                  </td>
+                  <td className="border border-gray-200 py-2 px-2 text-center">
+                    {member.contactInfo}
+                  </td>
+                  <td className="border border-gray-200 py-2 px-2 text-center">
+                    {member.ownerId}
+                  </td>
+                  <td className="border border-gray-200 py-2 px-2 text-center">
+                    {member.package}
+                  </td>
+                  <td className="border border-gray-200 py-2 px-2 text-center">
+                    {member.joiningDate}
+                  </td>
+                  <td className="border border-gray-200 py-2 px-2 text-center">
+                    {member.status}
+                  </td>
+                  <td className="border border-gray-200 py-2 px-2 text-center">
+                    <button className="px-2 py-1 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700">
+                      Edit
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       )}
     </div>

@@ -63,8 +63,8 @@ const BulkSMS = () => {
   return (
     <div className="p-6 mx-10 bg-gray-50 rounded-lg shadow-lg">
       <h1 className="text-2xl font-bold mb-6 text-gray-800">Send Bulk SMS</h1>
-      <div className="flex gap-10">
-        <div className="flex flex-col w-1/4 gap-4 bg-white p-4 rounded-lg shadow">
+      <div className="flex flex-col md:flex-row gap-10">
+        <div className="flex flex-col w-full md:w-1/4 h-auto gap-4 bg-white p-4 rounded-lg shadow">
           <div className="flex items-center justify-between">
             <p className="text-sm text-gray-600">
               {selectedMembers.length} selected / {mockMembers.length} total
@@ -73,7 +73,7 @@ const BulkSMS = () => {
           <button
             className={`py-2 px-4 rounded-lg transition-all font-medium ${
               activeTab === "send"
-                ? "bg-primary-color text-black"
+                ? "bg-primary-color text-btn-text-color"
                 : "bg-gray-200 hover:bg-gray-300"
             }`}
             onClick={() => setActiveTab("send")}
@@ -83,7 +83,7 @@ const BulkSMS = () => {
           <button
             className={`py-2 px-4 rounded-lg transition-all font-medium ${
               activeTab === "trash"
-                ? "bg-primary-color text-black"
+                ? "bg-primary-color text-btn-text-color"
                 : "bg-gray-200 hover:bg-gray-300"
             }`}
             onClick={() => setActiveTab("trash")}
@@ -94,7 +94,7 @@ const BulkSMS = () => {
 
         <div className="flex-1">
           {activeTab === "send" && (
-            <div className="grid grid-cols-1 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="border p-4 rounded-lg shadow bg-white">
                 <p className="font-semibold text-gray-700">Selected Members</p>
                 <ul className="list-disc pl-5 mt-2 text-gray-600">

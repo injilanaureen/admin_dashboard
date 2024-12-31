@@ -21,6 +21,11 @@ import MembersRights from '../components/ui/members/membersRights';
 import BulkSMS from '../components/ui/members/bulkSMS';
 import BulkEmail from '../components/ui/members/bulkEmail';
 import Packages from '../components/ui/members/packages';
+import PayoutTransactions from '../components/ui/payout/payoutTransaction';
+import PayoutPendingTransactions from '../components/ui/payout/payoutPendingTransaction';
+import PayoutDisputeTransactions from '../components/ui/payout/payoutDisputeTransaction';
+import PayoutRefund from '../components/ui/payout/payoutRefund';
+import PayoutProfitReport from '../components/ui/payout/payoutProfitReport';
 
 const AppRoutes = () => {
   return (
@@ -57,18 +62,16 @@ const AppRoutes = () => {
   <Route path="compose" element={<MyMailbox/>} /> {/* Route for Bulk Email */}
 </Route>
         
-        {/* Add more sections here if needed */}
-        
-      {/* </Route> */}
+      
 
       {/* Payout System */}
-      {/* <Route path="/payout">
+      <Route path="/payout">
         <Route path="transactions" element={<PayoutTransactions />} />
         <Route path="pending" element={<PayoutPendingTransactions />} />
         <Route path="disputes" element={<PayoutDisputeTransactions />} />
         <Route path="refunds" element={<PayoutRefund />} />
         <Route path="report" element={<PayoutProfitReport />} />
-      </Route> */}
+      </Route>
 
       {/* UPI System */}
       {/* <Route path="/upi">
