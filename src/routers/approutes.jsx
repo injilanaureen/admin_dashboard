@@ -26,6 +26,18 @@ import PayoutPendingTransactions from '../components/ui/payout/payoutPendingTran
 import PayoutDisputeTransactions from '../components/ui/payout/payoutDisputeTransaction';
 import PayoutRefund from '../components/ui/payout/payoutRefund';
 import PayoutProfitReport from '../components/ui/payout/payoutProfitReport';
+import UserTypes from '../components/ui/users/userTypes';
+import Users from '../components/ui/users/users';
+import UserRights from '../components/ui/users/userRights';
+import UpiTransactions from '../components/ui/upiservices/upiTransactions';
+import UpiPendingTransactions from '../components/ui/upiservices/upiPendingTransactions';
+import UpiDisputeTransactions from '../components/ui/upiservices/upiDisputeTransaction';
+import ProfitReport from '../components/ui/upiservices/upiProfitReport';
+import MemberFundRequest from '../components/ui/wallet/fundRequest';
+import ManageFundCredit from '../components/ui/wallet/fundCredit';
+import ManageFundDebit from '../components/ui/wallet/fundDebit';
+import ManageMinimumBalance from '../components/ui/wallet/minbalance';
+import AllWalletTransactions from '../components/ui/wallet/allWallet';
 
 const AppRoutes = () => {
   return (
@@ -73,22 +85,30 @@ const AppRoutes = () => {
         <Route path="report" element={<PayoutProfitReport />} />
       </Route>
 
+      {/* Users */}
+      <Route path="/users">
+        <Route path="types" element={<UserTypes />} />
+        <Route path="user" element={<Users />} />
+        <Route path="rights" element={<UserRights />} />
+       
+      </Route>
+      
       {/* UPI System */}
-      {/* <Route path="/upi">
-        <Route path="transactions" element={<UPITransactions />} />
-        <Route path="pending" element={<UPIPendingTransactions />} />
-        <Route path="disputes" element={<UPIDisputeTransactions />} />
-        <Route path="report" element={<UPIProfitReport />} />
-      </Route> */}
+      <Route path="/upi">
+        <Route path="transactions" element={<UpiTransactions />} />
+        <Route path="pending" element={<UpiPendingTransactions />} />
+        <Route path="disputes" element={<UpiDisputeTransactions />} />
+        <Route path="report" element={<ProfitReport />} />
+      </Route>
 
       {/* Wallet System */}
-      {/* <Route path="/wallet">
-        <Route path="request" element={<ManageFundRequest />} />
+      <Route path="/wallet">
+        <Route path="request" element={<MemberFundRequest />} />
         <Route path="credit" element={<ManageFundCredit />} />
         <Route path="debit" element={<ManageFundDebit />} />
         <Route path="balance" element={<ManageMinimumBalance />} />
         <Route path="transactions" element={<AllWalletTransactions />} />
-      </Route> */}
+      </Route>
 
       {/* Recharge System */}
       {/* <Route path="/recharge">

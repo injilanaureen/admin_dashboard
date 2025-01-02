@@ -180,10 +180,10 @@ export default function MembersKYC() {
       ) : (
         <div>
           {/* Summary Row */}
-          <div className="bg-primary-color flex text-orange-700 p-4 rounded-lg flex-wrap gap-4 justify-between">
-            <div className="w-full md:w-1/3 bg-orange-300 p-2 text-center">Total Members: {member.length}</div>
-            <div className="w-full md:w-1/3 bg-red-300 p-2 text-center">Active Members: {activeCount}</div>
-            <div className="w-full md:w-1/3 bg-blue-300 p-2 text-center">Inactive Members: {inactiveCount}</div>
+          <div className="bg-primary-color flex flex-col lg:flex-row text-white p-1 rounded-lg gap-4 mb-6">
+          <div className="w-full md:w-1/3 bg-orange-400 p-2 text-center rounded-lg">Total Members: {member.length}</div>
+          <div className="w-full md:w-1/3 bg-green-400 p-2 text-center rounded-lg">Active Members: {activeCount}</div>
+          <div className="w-full md:w-1/3 bg-red-400 p-2 text-center rounded-lg">Inactive Members: {inactiveCount}</div>
           </div>
 
           {/* Filters Section */}

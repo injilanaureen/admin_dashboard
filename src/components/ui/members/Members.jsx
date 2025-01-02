@@ -182,17 +182,17 @@ export default function MemberManagement() {
       ) : (
         <div>
           {/* Summary Row */}
-          <div className="bg-primary-color flex flex-wrap text-white p-1 rounded-lg justify-between gap-4 mb-6">
-  <div className="w-full md:w-1/3 bg-orange-400 p-2 text-center rounded-lg">
-    Total Members: {member.length}
-  </div>
-  <div className="w-full md:w-1/3 bg-green-400 p-2 text-center rounded-lg">
-    Active Members: {activeCount}
-  </div>
-  <div className="w-full md:w-1/3 bg-red-400 p-2 text-center rounded-lg">
-    Inactive Members: {inactiveCount}
-  </div>
-</div>
+          <div className="bg-primary-color flex flex-col lg:flex-row text-white p-1 rounded-lg gap-4 mb-6">
+              <div className="w-full md:w-1/3 bg-orange-400 p-2 text-center rounded-lg">
+                Total Members: {member.length}
+              </div>
+              <div className="w-full md:w-1/3 bg-green-400 p-2 text-center rounded-lg">
+                Active Members: {activeCount}
+              </div>
+              <div className="w-full md:w-1/3 bg-red-400 p-2 text-center rounded-lg">
+                Inactive Members: {inactiveCount}
+              </div>
+          </div>
 
           {/* Filters Section */}
           <div className="flex flex-wrap gap-4 mb-6">
@@ -217,9 +217,11 @@ export default function MemberManagement() {
             <tbody>
               {paginatedMembers.map((member, index) => (
                 <tr key={member.id} className="hover:bg-gray-50">
+                  
                   <td className="border border-gray-200 py-2 px-2 text-center">
                     {index + 1}
                   </td>
+                  
                   <td className="border border-gray-200 py-2 px-2 text-center">
                     {member.memberId}
                   </td>

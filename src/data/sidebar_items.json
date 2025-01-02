@@ -143,7 +143,7 @@
             },
             {
                 "title": "Manage Users",
-                "route": "/users/manage",
+                "route": "/users/user",
                 "image": "/images/right_arrow.svg"
             },
             {
