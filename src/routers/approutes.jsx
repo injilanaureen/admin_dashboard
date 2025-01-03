@@ -38,6 +38,13 @@ import ManageFundCredit from '../components/ui/wallet/fundCredit';
 import ManageFundDebit from '../components/ui/wallet/fundDebit';
 import ManageMinimumBalance from '../components/ui/wallet/minbalance';
 import AllWalletTransactions from '../components/ui/wallet/allWallet';
+import RefundRecharge from '../components/ui/recharge/refundRecharge';
+import ManageServiceTypes from '../components/ui/recharge/serviceTypes';
+import ManageOperators from '../components/ui/recharge/operators';
+import ManageOperatorsCodes from '../components/ui/recharge/operatorCodes';
+import ManageCircles from '../components/ui/recharge/circles';
+import ManageCirclesCodes from '../components/ui/recharge/circleCodes';
+import ManageCommission from '../components/ui/recharge/commission';
 
 const AppRoutes = () => {
   return (
@@ -111,15 +118,15 @@ const AppRoutes = () => {
       </Route>
 
       {/* Recharge System */}
-      {/* <Route path="/recharge">
-        <Route path="types" element={<ManageServiceTypes />} />
-        <Route path="operators" element={<ManageOperators />} />
+      <Route path="/recharge">
+         <Route path="types" element={<ManageServiceTypes />} />
+       <Route path="operators" element={<ManageOperators />} />
         <Route path="codes" element={<ManageOperatorsCodes />} />
         <Route path="circles" element={<ManageCircles />} />
-        <Route path="circles-codes" element={<ManageCirclesCodes />} />
-        <Route path="commission" element={<ManageCommission />} />
+         <Route path="circles-codes" element={<ManageCirclesCodes />} />
+        <Route path="commission" element={<ManageCommission />} /> 
         <Route path="refund" element={<RefundRecharge />} />
-      </Route> */}
+      </Route>
 
       {/* API Management */}
       {/* <Route path="/api">

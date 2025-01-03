@@ -65,7 +65,7 @@ const MemberFundRequest = () => {
 
   return (
     <div className="bg-white p-4">
-      <div className='flex gap-2 mb-5 text-2xl'><Logs className="w-6 h-6" /> <h2>Members Fund Request</h2></div>
+      <div className='flex gap-2 mb-5 text-2xl'><Logs className="w-6 h-6" /> <h2>Members Minimum Balance</h2></div>
       <div className="flex flex-wrap items-center gap-4 p-2">
   <div className="flex items-center space-x-2">
     <span className="text-lg">From Date:</span>
