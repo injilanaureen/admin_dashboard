@@ -45,7 +45,9 @@ import ManageOperatorsCodes from '../components/ui/recharge/operatorCodes';
 import ManageCircles from '../components/ui/recharge/circles';
 import ManageCirclesCodes from '../components/ui/recharge/circleCodes';
 import ManageCommission from '../components/ui/recharge/commission';
-
+import ManageTicketDepartments from '../components/ui/help/ticketDepartment';
+import ManageTicketPriorities from '../components/ui/help/ticketPriorities';
+import ListAllTickets from '../components/ui/help/allTickets';
 const AppRoutes = () => {
   return (
     <Routes>
@@ -161,11 +163,11 @@ const AppRoutes = () => {
       </Route> */}
 
       {/* Help & Support */}
-      {/* <Route path="/support">
+      <Route path="/support">
         <Route path="departments" element={<ManageTicketDepartments />} />
         <Route path="priorities" element={<ManageTicketPriorities />} />
         <Route path="tickets" element={<ListAllTickets />} />
-      </Route> */}
+      </Route> 
     </Routes>
   );
 };
