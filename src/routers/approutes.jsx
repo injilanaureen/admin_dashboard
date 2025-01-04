@@ -48,6 +48,12 @@ import ManageCommission from '../components/ui/recharge/commission';
 import ManageTicketDepartments from '../components/ui/help/ticketDepartment';
 import ManageTicketPriorities from '../components/ui/help/ticketPriorities';
 import ListAllTickets from '../components/ui/help/allTickets';
+import EWalletBalance from '../components/ui/reports/eWalletBalance';
+import RechargeTransactions from '../components/ui/reports/rechargeTransactions';
+import PendingRecharges from '../components/ui/reports/pendingRecharges';
+import MyProfit from '../components/ui/reports/myProfit';
+import DisputeSettlement from '../components/ui/reports/rechargeDisputeTransaction';
+
 const AppRoutes = () => {
   return (
     <Routes>
@@ -137,13 +143,13 @@ const AppRoutes = () => {
       </Route> */}
 
       {/* Reports */}
-      {/* <Route path="/reports">
+      <Route path="/reports">
         <Route path="wallet-balance" element={<EWalletBalance />} />
         <Route path="recharge-transactions" element={<RechargeTransactions />} />
         <Route path="pending-recharges" element={<PendingRecharges />} />
         <Route path="profit" element={<MyProfit />} />
         <Route path="disputes" element={<DisputeSettlement />} />
-      </Route> */}
+      </Route> 
 
       {/* General Settings */}
       {/* <Route path="/settings">

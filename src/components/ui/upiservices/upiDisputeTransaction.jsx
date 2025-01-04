@@ -75,7 +75,7 @@ const UpiDisputeTransactions = () => {
 
   return (
     <div className="p-6 md:p-10 m-4 bg-gray-100">
-      <h2 className="text-3xl font-bold text-cyan-600 mb-4">Dispute Transactions</h2>
+      <h2 className="text-3xl font-bold text-cyan-600 mb-4">UPI Services </h2>
 
       {/* Filters Section */}
       <h3 className="text-xl font-bold text-black mb-4">⁜ Dispute Transactions</h3>
