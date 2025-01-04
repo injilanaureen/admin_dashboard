@@ -1,12 +1,14 @@
 import React from 'react';
 import classNames from 'classnames';
+import { ArrowBigRight, CircleArrowRightIcon } from 'lucide-react';
 
 export default function Card({ title, image, link, bg_color, onClick }) {
+  console.log(bg_color);
   return (
     <div
       className={classNames(
-        'group border-solid border-2 relative rounded flex flex-col bg-orange-400 overflow-hidden pt-2 transition-all duration-300',
-        bg_color ? bg_color : 'bg-gray-200'
+        'group relative rounded-md shadow-md flex flex-col overflow-hidden pt-2 transition-all duration-300',
+        bg_color ? bg_color : 'bg-red-200'
       )}
     >
       <div className="flex flex-row justify-between px-2 py-4 pr-4 items-center">
@@ -25,11 +27,7 @@ export default function Card({ title, image, link, bg_color, onClick }) {
         onClick={onClick}
       >
         <a className="text-xs text-white font-medium">Click to Open</a>
-        <img
-          className="w-2 h-2 bg-white rounded"
-          src="./images/right_finger.svg"
-          alt="arrow"
-        />
+        <CircleArrowRightIcon className='scale-75 text-white'/>
       </div>
     </div>
   );
