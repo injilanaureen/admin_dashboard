@@ -53,6 +53,9 @@ import RechargeTransactions from '../components/ui/reports/rechargeTransactions'
 import PendingRecharges from '../components/ui/reports/pendingRecharges';
 import MyProfit from '../components/ui/reports/myProfit';
 import DisputeSettlement from '../components/ui/reports/rechargeDisputeTransaction';
+import ManageAPI from '../components/ui/api/manageApi';
+import ManageTemplates from '../components/ui/api/smstemplate';
+
 
 const AppRoutes = () => {
   return (
@@ -137,10 +140,28 @@ const AppRoutes = () => {
       </Route>
 
       {/* API Management */}
-      {/* <Route path="/api">
-        <Route path="sms" element={<SMSAPI />} />
-        <Route path="recharge" element={<RechargeAPI />} />
-      </Route> */}
+
+
+{/*// Main API route with children*/}
+<Route path="/api"> 
+      {/* SMS API route with nested children */}
+       <Route path="sms" >
+         <Route path="manage" element={<ManageAPI />} />
+         <Route path="templates" element={<ManageTemplates />} />
+      </Route> 
+{/* 
+       <Route path="recharge">
+        <Route path="balance" element={<APIBalance />} />
+        <Route path="addbalance" element={<AddAPIBalance />} />
+        <Route path="deductbalance" element={<DeductAPIBalance />} />
+        <Route path="switch" element={<APISwitching />} />
+        <Route path="operator" element={<ChangeAPIOperator />} />
+        <Route path="package" element={<ChangeAPIPackage />} />
+        <Route path="amount" element={<ChangeAPIAmount />} />
+        <Route path="priority" element={<ChangeAPIPriority />} />
+      </Route>*/}
+    </Route>  
+
 
       {/* Reports */}
       <Route path="/reports">

@@ -266,12 +266,66 @@
             {
                 "title": "SMS API",
                 "route": "/api/sms",
-                "image": "/images/right_arrow.svg"
+                "image": "/images/right_arrow.svg",
+                "children":[
+                    {
+                        "title":"Manage API",
+                        "route": "/api/sms/manage",
+                        "image": "/images/right_arrow.svg"
+                    },
+                    {
+                        "title":"Manage SMS Templates",
+                        "route": "/api/sms/templates",
+                        "image": "/images/right_arrow.svg"
+                    }
+                ]
             },
             {
                 "title": "Recharge API",
                 "route": "/api/recharge",
-                "image": "/images/right_arrow.svg"
+                "image": "/images/right_arrow.svg",
+                "children":[
+                    {
+                        "title": "API Balance",
+                        "route": "/api/recharge/balance",
+                        "method": "GET"
+                      },
+                      {
+                        "title": "Add API Balance",
+                        "route": "/api/recharge/addbalance",
+                        "method": "POST"
+                      },
+                      {
+                        "title": "Deduct API Balance",
+                        "route": "/api/recharge/deductbalance",
+                        "method": "POST"
+                      },
+                      {
+                        "title": "API Switching",
+                        "route": "/api/recharge/switch",
+                        "method": "POST"
+                      },
+                      {
+                        "title": "Change API Operator Wise",
+                        "route": "/api/recharge/operator",
+                        "method": "POST"
+                      },
+                      {
+                        "title": "Change API Package Wise",
+                        "route": "/api/recharge/package",
+                        "method": "POST"
+                      },
+                      {
+                        "title": "Change API Amount Wise",
+                        "route": "/api/recharge/amount",
+                        "method": "POST"
+                      },
+                      {
+                        "title": "Change API Priority",
+                        "route": "/api/recharge/priority",
+                        "method": "POST"
+                      }
+                ]
             }
         ]
     },
