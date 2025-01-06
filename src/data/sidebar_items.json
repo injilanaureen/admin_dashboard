@@ -33,7 +33,7 @@
     {
         "title": "CMS Management",
         "image": "/images/earth-with-americas.png",
-        "bg_color": "customOrange",
+        "bg_color": "bg-green-500",
         "route": "/cms",
         "children": [
             {
@@ -62,7 +62,7 @@
     {
         "title": "Members",
         "image": "/images/users.svg",
-        "bg_color": "customRed",
+        "bg_color": "bg-red-500",
         "route": "/members",
         "children": [
           {
@@ -100,7 +100,7 @@
       
     {
         "title": "Payout Service",
-        "bg_color": "customGreen",
+        "bg_color": "bg-orange-500",
         "route": "/payout",
         "children": [
             {
@@ -133,7 +133,7 @@
     {
         "title": "Users",
         "image": "/images/users.svg",
-        "bg_color": "customViolet",
+        "bg_color": "bg-rose-500",
         "route": "/users",
         "children": [
             {
@@ -156,7 +156,7 @@
     {
         "title": "UPI Services",
         "image": "",
-        "bg_color": "customPink",
+        "bg_color": "bg-pink-500",
         "route": "/upi",
         "children": [
             {
@@ -184,7 +184,7 @@
     {
         "title": "Wallet System",
         "image": "/images/wallet.svg",
-        "bg_color": "customEmerald",
+        "bg_color": "bg-cyan-500",
         "route": "/wallet",
         "children": [
             {
@@ -217,7 +217,7 @@
     {
         "title": "Recharge System",
         "image": "/images/rechargeable.png",
-        "bg_color": "customFuchsia",
+        "bg_color": "bg-violet-500",
         "route": "/recharge",
         "children": [
             {
@@ -260,7 +260,7 @@
     {
         "title": "API Management",
         "image": "/images/api.svg",
-        "bg_color": "bg-customRose",
+        "bg_color": "bg-gray-500",
         "route": "/api",
         "children": [
             {
@@ -332,7 +332,7 @@
     {
         "title": "Reports",
         "image": "/images/report.svg",
-        "bg_color": "bg-customCyan",
+        "bg_color": "bg-teal-500",
         "route": "/reports",
         "children": [
             {
@@ -438,7 +438,7 @@
     {
         "title": "Help & Support",
         "image": "/images/help.svg",
-        "bg_color": "bg-orange-300",
+        "bg_color": "bg-fuchsia-500",
         "route": "/support",
         "children": [
             {
