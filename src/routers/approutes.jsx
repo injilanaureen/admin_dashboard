@@ -53,9 +53,29 @@ import RechargeTransactions from '../components/ui/reports/rechargeTransactions'
 import PendingRecharges from '../components/ui/reports/pendingRecharges';
 import MyProfit from '../components/ui/reports/myProfit';
 import DisputeSettlement from '../components/ui/reports/rechargeDisputeTransaction';
-import ManageAPI from '../components/ui/api/manageApi';
-import ManageTemplates from '../components/ui/api/smstemplate';
-
+import ManageAPI from '../components/ui/api/sms/manageApi';
+import ManageTemplates from '../components/ui/api/sms/smstemplate';
+import ManageRechargeAPI from '../components/ui/api/recharge/manageApi';
+import AddAPIBalance from '../components/ui/api/recharge/balanceAPI';
+import APISwitching from '../components/ui/api/recharge/apiSwitching';
+import ChangeAPIOperator from '../components/ui/api/recharge/operatorApiChange';
+import ChangeAPIPackage from '../components/ui/api/recharge/packageAPichange';
+import ChangeAPIPriority from '../components/ui/api/recharge/priorityApiChange';
+import ChangeAPIAmount from '../components/ui/api/recharge/amountApiChange';
+import DeductAPIBalance from '../components/ui/api/recharge/deductAPiBalance';
+import ManageCountries from '../components/ui/settings/manageCountries';
+import ManageStates from '../components/ui/settings/manageStates';
+import ManageCities from '../components/ui/settings/manageCities';
+import ManageBanks from '../components/ui/settings/managebanks';
+import ManageBankAccounts from '../components/ui/settings/manageBankAccount';
+import ManageCompany from '../components/ui/settings/manageCompany';
+import ManageNews from '../components/ui/settings/manageNews';
+import ManageNoticeBoard from '../components/ui/settings/manageNoticeBoard';
+import ManageSettingBanner from '../components/ui/settings/managebanner';
+import ManageLiveChat from '../components/ui/settings/liveChat';
+import WebsiteControl from '../components/ui/settings/websiteControl';
+import EmailSetting from '../components/ui/settings/emailSetting';
+import MyLoginDetails from '../components/ui/settings/loginDetails';
 
 const AppRoutes = () => {
   return (
@@ -149,17 +169,17 @@ const AppRoutes = () => {
          <Route path="manage" element={<ManageAPI />} />
          <Route path="templates" element={<ManageTemplates />} />
       </Route> 
-{/* 
+
        <Route path="recharge">
-        <Route path="balance" element={<APIBalance />} />
-        <Route path="addbalance" element={<AddAPIBalance />} />
-        <Route path="deductbalance" element={<DeductAPIBalance />} />
+        <Route path="balance" element={<ManageRechargeAPI />} />
+      <Route path="addbalance" element={<AddAPIBalance />} />
         <Route path="switch" element={<APISwitching />} />
-        <Route path="operator" element={<ChangeAPIOperator />} />
-        <Route path="package" element={<ChangeAPIPackage />} />
-        <Route path="amount" element={<ChangeAPIAmount />} />
-        <Route path="priority" element={<ChangeAPIPriority />} />
-      </Route>*/}
+          <Route path="deductbalance" element={<DeductAPIBalance />} />
+          <Route path="operator" element={<ChangeAPIOperator />} />
+          <Route path="package" element={<ChangeAPIPackage />} />
+          <Route path="amount" element={<ChangeAPIAmount />} />
+          <Route path="priority" element={<ChangeAPIPriority />} />
+      </Route>
     </Route>  
 
 
@@ -173,21 +193,21 @@ const AppRoutes = () => {
       </Route> 
 
       {/* General Settings */}
-      {/* <Route path="/settings">
+   <Route path="/settings">
         <Route path="countries" element={<ManageCountries />} />
-        <Route path="states" element={<ManageStates />} />
-        <Route path="cities" element={<ManageCities />} />
-        <Route path="banks" element={<ManageBanks />} />
-        <Route path="bank-accounts" element={<ManageBankAccounts />} />
-        <Route path="company" element={<ManageCompany />} />
-        <Route path="news" element={<ManageNews />} />
+       <Route path="states" element={<ManageStates />} />
+          <Route path="cities" element={<ManageCities />} />
+          <Route path="banks" element={<ManageBanks />} />
+          <Route path="bank-accounts" element={<ManageBankAccounts />} />
+          <Route path="company" element={<ManageCompany />} />
+         <Route path="news" element={<ManageNews />} />
         <Route path="notice-board" element={<ManageNoticeBoard />} />
-        <Route path="banner" element={<ManageBanner />} />
+      <Route path="banner" element={<ManageSettingBanner />} />
         <Route path="chat" element={<ManageLiveChat />} />
         <Route path="website-control" element={<WebsiteControl />} />
-        <Route path="email" element={<EmailSetting />} />
+       <Route path="email" element={<EmailSetting />} />
         <Route path="login-details" element={<MyLoginDetails />} />
-      </Route> */}
+      </Route> 
 
       {/* Help & Support */}
       <Route path="/support">

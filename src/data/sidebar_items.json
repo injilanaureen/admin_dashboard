@@ -2,7 +2,7 @@
     {
         "title": "DashBoard",
         "image": "/images/monitor.svg",
-        "bg_color": "bg-sky-500",
+        "bg_color": "bg-cyan-400",
         "route": "/",
         "children": [
             {
@@ -33,7 +33,7 @@
     {
         "title": "CMS Management",
         "image": "/images/earth-with-americas.png",
-        "bg_color": "bg-green-500",
+        "bg_color": "bg-orange-400",
         "route": "/cms",
         "children": [
             {
@@ -100,7 +100,7 @@
       
     {
         "title": "Payout Service",
-        "bg_color": "bg-orange-500",
+        "bg_color": "bg-green-400",
         "route": "/payout",
         "children": [
             {
@@ -459,3 +459,5 @@
         ]
     }
 ]
+
+

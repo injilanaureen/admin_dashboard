@@ -92,6 +92,7 @@ const PendingRecharges = () => {
       return true;
     });
   }, [filters, data]);
+  
   const handleRowClick = (index) => {
     if (selectedRows.includes(index)) {
       setSelectedRows(selectedRows.filter((row) => row !== index));

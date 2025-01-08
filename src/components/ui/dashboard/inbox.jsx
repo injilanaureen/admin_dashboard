@@ -4,7 +4,7 @@ import EmailTable from "./EmailTable";
 const Inbox = () => {
   const [emails, setEmails] = useState([
     { id: 1, subject: "Welcome to Inbox", sender: "admin@mailbox.com", date: "12/28/2024", status: "Read" },
-    { id: 2, subject: "Meeting Reminder", sender: "team@company.com", date: "12/27/2024", status: "Read" },
+    { id: 2, subject: "Meeting Reminder", sender: "team@company.com", date: "12/27/2024", status: "unread" },
   ]);
   const [selectedEmails, setSelectedEmails] = useState([]);
 

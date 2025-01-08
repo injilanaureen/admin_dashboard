@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Sidebar_items from "./ui/sidebar_items";
 import sidebarData from "../data/sidebar_items.json";
 
-export default function Sidebar({ isOpen }) {
+export default function Sidebar({ isOpen,isFullscreen  }) {
   const [openIndex, setOpenIndex] = useState(null); // Track which dropdown is open
 
   const handleToggle = (index) => {

@@ -1,38 +1,55 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from "react";
+import InfiniteScroll from "react-infinite-scroll-component";
 import { FileText, Download, Printer, Logs } from "lucide-react";
 
 const MemberFundRequest = () => {
   const [filters, setFilters] = useState({
-    fromDate: '',
-    toDate: '',
-    filterText: '',
-    status: '0',
-    pageSize: '10'
+    fromDate: "",
+    toDate: "",
+    filterText: "",
+    status: "0",
+    pageSize: "10",
   });
-  const [data, setData] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
+  const [data, setData] = useState([]); // Full data
+  const [displayedData, setDisplayedData] = useState([]); // Data currently displayed
+  const [page, setPage] = useState(1); // Current page
+  const [hasMore, setHasMore] = useState(true); // If more data is available
 
   useEffect(() => {
-    const mockData = Array.from({ length: 100 }, (_, i) => ({
+    // Mock data generation
+    const mockData = Array.from({ length: 1000 }, (_, i) => ({
       sNo: i + 1,
       memberId: `MID${1000 + i}`,
       memberName: `Member ${i + 1}`,
       toBank: `Bank ${i % 5 + 1}`,
       amount: (i + 1) * 100,
       transactionId: `TXN${i + 1}`,
-      status: ['Approved', 'Pending', 'Rejected'][i % 3],
-      requestDate: new Date(Date.now() - i * 86400000).toISOString().split('T')[0],
-      action: 'View Details'
+      status: ["Approved", "Pending", "Rejected"][i % 3],
+      requestDate: new Date(Date.now() - i * 86400000)
+        .toISOString()
+        .split("T")[0],
+      action: "View Details",
     }));
     setData(mockData);
-    setFilteredData(mockData);
+    setDisplayedData(mockData.slice(0, 20)); // Load initial 20 records
   }, []);
+
+  const loadMoreData = () => {
+    // Simulate loading more data
+    const newData = data.slice(page * 20, (page + 1) * 20);
+    if (newData.length === 0) {
+      setHasMore(false); // No more data to load
+      return;
+    }
+    setDisplayedData((prev) => [...prev, ...newData]);
+    setPage((prev) => prev + 1);
+  };
 
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     setFilters((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -46,21 +63,19 @@ const MemberFundRequest = () => {
         !filterText ||
         item.memberName.toLowerCase().includes(filterText.toLowerCase()) ||
         item.memberId.toLowerCase().includes(filterText.toLowerCase());
-      const matchesStatus = status === '0' || item.status === status;
+      const matchesStatus = status === "0" || item.status === status;
 
       return matchesDate && matchesText && matchesStatus;
     });
-    setFilteredData(filtered);
+
+    setDisplayedData(filtered.slice(0, 20)); // Reset to first page of filtered data
+    setPage(1);
+    setHasMore(filtered.length > 20); // Check if more data is available
   };
 
   const handleExport = (type) => {
     console.log(`Exporting as ${type}`);
   };
-
-  const paginatedData = useMemo(() => {
-    const pageSize = parseInt(filters.pageSize, 10);
-    return filteredData.slice(0, pageSize);
-  }, [filteredData, filters.pageSize]);
 
   return (
     <div className="bg-white p-4">
@@ -68,7 +83,8 @@ const MemberFundRequest = () => {
         <Logs className="w-6 h-6" />
         <h2>Members Fund Request</h2>
       </div>
-  
+
+      {/* Filters */}
       <div className="flex flex-wrap gap-4 mb-4">
         <div className="flex flex-col sm:flex-row items-center gap-2 w-full sm:w-auto">
           <span className="text-lg">From Date:</span>
@@ -118,57 +134,49 @@ const MemberFundRequest = () => {
           </button>
         </div>
       </div>
-  
+
+      {/* Table */}
       <div className="border rounded">
         <div className="p-4 flex flex-col md:flex-row justify-between items-center border-b">
           <div className="flex items-center space-x-4">
-            <span>Total Record(s): {filteredData.length}</span>
-            <button onClick={() => handleExport('excel')} className="text-green-600">
+            <span>Total Record(s): {data.length}</span>
+            <button onClick={() => handleExport("excel")} className="text-green-600">
               <FileText className="w-6 h-6" />
             </button>
-            <button onClick={() => handleExport('word')} className="text-blue-600">
+            <button onClick={() => handleExport("word")} className="text-blue-600">
               <Download className="w-6 h-6" />
             </button>
-            <button onClick={() => handleExport('pdf')} className="text-red-600">
+            <button onClick={() => handleExport("pdf")} className="text-red-600">
               <Printer className="w-6 h-6" />
             </button>
           </div>
-          <div className="flex items-center mt-4 md:mt-0">
-            <span className="mr-2">Page Size:</span>
-            <select
-              name="pageSize"
-              className="border rounded p-1 w-full sm:w-32"
-              value={filters.pageSize}
-              onChange={handleFilterChange}
-            >
-              <option value="10">10</option>
-              <option value="50">50</option>
-              <option value="100">100</option>
-              <option value="200">200</option>
-              <option value="500">500</option>
-              <option value="1000">1000</option>
-            </select>
-          </div>
         </div>
-  
-        <div className="overflow-x-auto">
-          <table className="w-full table-auto">
-            <thead>
-              <tr className="bg-gray-50">
-                <th className="p-3 text-left text-sm">S. No</th>
-                <th className="p-3 text-left text-sm">MemberID</th>
-                <th className="p-3 text-left text-sm">MemberName</th>
-                <th className="p-3 text-left text-sm">To Bank</th>
-                <th className="p-3 text-left text-sm">Amount</th>
-                <th className="p-3 text-left text-sm">TransactionID / ChequeNo</th>
-                <th className="p-3 text-left text-sm">Status</th>
-                <th className="p-3 text-left text-sm">Request Date</th>
-                <th className="p-3 text-left text-sm">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {paginatedData.length > 0 ? (
-                paginatedData.map((row, index) => (
+
+        {/* Infinite Scroll Table */}
+        <InfiniteScroll
+          dataLength={displayedData.length}
+          next={loadMoreData}
+          hasMore={hasMore}
+          loader={<h4 className="text-center">Loading more records...</h4>}
+          endMessage={<p className="text-center">No more records available.</p>}
+        >
+          <div className="overflow-x-auto">
+            <table className="w-full table-auto">
+              <thead>
+                <tr className="bg-gray-50">
+                  <th className="p-3 text-left text-sm">S. No</th>
+                  <th className="p-3 text-left text-sm">MemberID</th>
+                  <th className="p-3 text-left text-sm">MemberName</th>
+                  <th className="p-3 text-left text-sm">To Bank</th>
+                  <th className="p-3 text-left text-sm">Amount</th>
+                  <th className="p-3 text-left text-sm">TransactionID / ChequeNo</th>
+                  <th className="p-3 text-left text-sm">Status</th>
+                  <th className="p-3 text-left text-sm">Request Date</th>
+                  <th className="p-3 text-left text-sm">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {displayedData.map((row, index) => (
                   <tr key={index} className="border-t text-sm">
                     <td className="p-3">{row.sNo}</td>
                     <td className="p-3">{row.memberId}</td>
@@ -180,22 +188,14 @@ const MemberFundRequest = () => {
                     <td className="p-3">{row.requestDate}</td>
                     <td className="p-3">{row.action}</td>
                   </tr>
-                ))
-              ) : (
-                <tr>
-                  <td colSpan="9" className="p-3 text-center text-gray-500">
-                    No Record Found!
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
-        </div>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </InfiniteScroll>
       </div>
     </div>
   );
-  
-  
 };
 
 export default MemberFundRequest;
